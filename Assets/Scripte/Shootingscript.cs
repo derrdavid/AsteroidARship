@@ -29,7 +29,10 @@ public class Shootingscript : MonoBehaviour
         // Überprüfen, ob der Bildschirm berührt wurde
         if (Input.GetMouseButtonDown(0))
         {
-            // Führen Sie den Raycast aus
+            Raycast();
+        }
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+        {
             Raycast();
         }
     }
