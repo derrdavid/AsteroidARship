@@ -5,11 +5,11 @@ using UnityEngine;
 public class ProjectileSpawner : MonoBehaviour
 {
     public GameObject prefab;
+    [Range(0.0f, 50.0f)] public float spawnIntervalMin;
+    [Range(0.0f, 50.0f)] public float spawnIntervalMax;
     public float maxObjects = 3f;
-    public float targetZ = -17f;
     public float moveSpeed = 7f;
     private float timer = 0f;
-    private float spawnInterval = 3f;
     private List<GameObject> objects = new List<GameObject>();
 
     private void Update()
@@ -21,16 +21,16 @@ public class ProjectileSpawner : MonoBehaviour
                 objects.Remove(objects[i]);
             }
         }
-        spawnInterval = Random.Range(1, 3);
+        float intervalValue = Random.Range(spawnIntervalMin, spawnIntervalMax);
         timer += Time.deltaTime;
-        if (timer >= spawnInterval)
+        if (timer >= intervalValue)
         {
             timer = 0;
             if (objects.Count < maxObjects)
             {
                 GameObject newObject = Instantiate(prefab, transform.position, Quaternion.identity);
-                ProjectileMove projectileMove = newObject.GetComponent<ProjectileMove>();
-                projectileMove.set(Random.Range(3, this.moveSpeed), Random.Range(-5, 5), this.targetZ);
+                Projectile projectileMove = newObject.GetComponent<Projectile>();
+                projectileMove.set(Random.Range(this.moveSpeed - 3, this.moveSpeed), Random.Range(-5, 5), -17);
                 objects.Add(newObject);
             }
         }

@@ -15,6 +15,7 @@ public class Shootingscript : MonoBehaviour
     private GameObject camera;
     [SerializeField]
     private LayerMask enemys;
+    public float damage;
 
     Ray ray;
 
@@ -26,7 +27,7 @@ public class Shootingscript : MonoBehaviour
     void Update()
     {
         Debug.DrawRay(camera.transform.position, camera.transform.forward * 100, Color.red);
-        // Überprüfen, ob der Bildschirm berührt wurde
+        // ï¿½berprï¿½fen, ob der Bildschirm berï¿½hrt wurde
         if (Input.GetMouseButtonDown(0))
         {
             Raycast();
@@ -42,14 +43,14 @@ public class Shootingscript : MonoBehaviour
         List<ARRaycastHit> hits = new List<ARRaycastHit>();
         raycastManager.Raycast(new Vector2(Screen.width / 2, Screen.height / 2), hits, TrackableType.AllTypes);
 
-        // Überprüfen Sie, ob ein Treffer vorhanden ist
-        if (Physics.Raycast(camera.transform.position,camera.transform.forward, out RaycastHit hit, 100, enemys, QueryTriggerInteraction.UseGlobal))
+        // ï¿½berprï¿½fen Sie, ob ein Treffer vorhanden ist
+        if (Physics.Raycast(camera.transform.position, camera.transform.forward, out RaycastHit hit, 100, enemys, QueryTriggerInteraction.UseGlobal))
         {
             placeTracker(hit.point);
 
             if (hit.collider.tag == "Enemy")
             {
-                hit.collider.GetComponent<Target>().getHit();
+                hit.collider.GetComponent<Projectile>().getHit(damage);
             }
         }
         /*else if (hits.Count > 0)
@@ -61,7 +62,8 @@ public class Shootingscript : MonoBehaviour
             Debug.Log("Hit Pose: " + hitPose.position);
         }*/
     }
-    void placeTracker(Vector3 pos){
+    void placeTracker(Vector3 pos)
+    {
         tracker.transform.position = pos;
     }
 }

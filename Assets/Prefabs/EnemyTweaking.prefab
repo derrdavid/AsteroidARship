@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 1268919551586408883}
   - component: {fileID: 1268919551586408882}
   - component: {fileID: 1268919551586408885}
-  - component: {fileID: 1268919551586408782}
-  - component: {fileID: 1913348146471998332}
+  - component: {fileID: 4429721545093630266}
+  - component: {fileID: -9112642307461976063}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: EnemyTweaking
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34,7 +34,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1268919551586408883
 MeshFilter:
@@ -64,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2462d740e1d4fa5458e16a6ea3e343ec, type: 2}
+  - {fileID: 2100000, guid: 3a4ebcea5adb81a4fb1440ec1fc3ea33, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -107,7 +107,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1268919551586408782
+--- !u!114 &4429721545093630266
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -116,19 +116,38 @@ MonoBehaviour:
   m_GameObject: {fileID: 1268919551586408884}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed9169e37d8c4d94c8e8b3c84d07c295, type: 3}
+  m_Script: {fileID: 11500000, guid: 3b930641d6f5ac64a8cf850e301553d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 0
+  xPosition: 0
+  targetZ: 0
   deathDouble: {fileID: 8929082375700027164, guid: 5c3e7267b6e4f9d4ca1b8315e863f245, type: 3}
---- !u!114 &1913348146471998332
-MonoBehaviour:
+  health: 5
+--- !u!54 &-9112642307461976063
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1268919551586408884}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1ca6ae15e609964182c3df6fd089e12, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
