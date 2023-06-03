@@ -42,7 +42,8 @@ public class ProjectileSplit : Projectile
         }
         if (health <= 0)
         {
-            Instantiate(deathDouble, transform.position, Quaternion.identity);
+            //wen er neue spawnt muss er ja nicht fallen
+            //Instantiate(deathDouble, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
         }
     }

@@ -43,7 +43,7 @@ public class Shootingscript : MonoBehaviour
         List<ARRaycastHit> hits = new List<ARRaycastHit>();
         raycastManager.Raycast(new Vector2(Screen.width / 2, Screen.height / 2), hits, TrackableType.AllTypes);
 
-        // �berpr�fen Sie, ob ein Treffer vorhanden ist
+        // ueberpruefen Sie, ob ein Treffer vorhanden ist
         if (Physics.Raycast(camera.transform.position, camera.transform.forward, out RaycastHit hit, 100, enemys, QueryTriggerInteraction.UseGlobal))
         {
             placeTracker(hit.point);

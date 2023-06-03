@@ -1,15 +1,16 @@
+using JetBrains.Rider.Unity.Editor;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ProjectileStandard : Projectile
 {
-
     // setzen der Ausgangsposition
     void Start()
     {
         setHealth(10f);
-        gameObject.transform.position = new Vector3(xPosition, gameObject.transform.position.y, gameObject.transform.position.z);
+        gameObject.transform.position = new Vector3(xPosition, gameObject.transform.position.y, gameObject.transform.position.z); 
     }
 
     // Bewege gameObject in z-Achse

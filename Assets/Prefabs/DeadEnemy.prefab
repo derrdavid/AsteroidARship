@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 1796335764467310390}
   - component: {fileID: 3943418596268101927}
   - component: {fileID: 6283508139571984020}
+  - component: {fileID: 7433480030874845635}
   m_Layer: 0
   m_Name: DeadEnemy
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -146,3 +147,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35c94e3b72debcb4e97c050b235d08a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cuts: 4
+  explosionForce: 5
+--- !u!114 &7433480030874845635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8929082375700027164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd4cbeed30b6e264c8f3d65b6e856f87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isSolid: 1
+  _reverseWindTriangles: 0
+  _useGravity: 1
+  _shareVertices: 0
+  _smoothVertices: 0
