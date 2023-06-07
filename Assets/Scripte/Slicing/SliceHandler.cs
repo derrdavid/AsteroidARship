@@ -14,7 +14,7 @@ public class SliceHandler : MonoBehaviour
     public static GameObject[] Slice(Plane plane, GameObject objectToCut)
     {
         //Get the current mesh and its verts and tris
-        Mesh mesh = objectToCut.GetComponent<MeshFilter>().mesh;
+        Mesh mesh = objectToCut.GetComponent<MeshFilter>().sharedMesh;
         var a = mesh.GetSubMesh(0);
         Sliceable sliceable = objectToCut.GetComponent<Sliceable>();
 
@@ -51,7 +51,7 @@ public class SliceHandler : MonoBehaviour
     /// <returns></returns>
     private static GameObject CreateMeshGameObject(GameObject originalObject)
     {
-        var originalMaterial = originalObject.GetComponent<MeshRenderer>().materials;
+        var originalMaterial = originalObject.GetComponent<MeshRenderer>().sharedMaterials;
 
         GameObject meshGameObject = new GameObject();
         Sliceable originalSliceable = originalObject.GetComponent<Sliceable>();
@@ -63,8 +63,9 @@ public class SliceHandler : MonoBehaviour
         sliceable.IsSolid = originalSliceable.IsSolid;
         sliceable.ReverseWireTriangles = originalSliceable.ReverseWireTriangles;
         sliceable.UseGravity = originalSliceable.UseGravity;
-
-        meshGameObject.GetComponent<MeshRenderer>().materials = originalMaterial;
+        MeshRenderer meshGameObjectMeshRenderer = meshGameObject.GetComponent<MeshRenderer>();
+        meshGameObjectMeshRenderer.materials = originalMaterial;
+        meshGameObjectMeshRenderer.enabled = false;
 
         meshGameObject.transform.localScale = originalObject.transform.localScale;
         meshGameObject.transform.rotation = originalObject.transform.rotation;
@@ -86,7 +87,7 @@ public class SliceHandler : MonoBehaviour
         meshCollider.sharedMesh = mesh;
         meshCollider.convex = true;
 
-        var rb = gameObject.AddComponent<Rigidbody>();
-        rb.useGravity = useGravity;
+        //var rb = gameObject.AddComponent<Rigidbody>();
+        //rb.useGravity = useGravity;
     }
 }

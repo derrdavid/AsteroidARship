@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ProjectileSpawner : MonoBehaviour
@@ -11,6 +12,8 @@ public class ProjectileSpawner : MonoBehaviour
     public float moveSpeed = 7f;
     private float timer = 0f;
     private List<GameObject> objects = new List<GameObject>();
+    [SerializeField]
+    private GameObject deadEnemyLists;
 
     private void Update()
     {
