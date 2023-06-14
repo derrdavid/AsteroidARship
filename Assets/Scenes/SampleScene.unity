@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657815, g: 0.49641192, b: 0.57481617, a: 1}
+  m_IndirectSpecularColor: {r: 0.44402242, g: 0.49316543, b: 0.5722324, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -970,7 +970,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0115c28a2b5b202448d1594f443ccca1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 1268919551586408884, guid: 907a1ed25f76f1341962eb2859672636, type: 3}
+  prefab: {fileID: 1196303534189875630, guid: 1c7c6112405d67541951bf89651cc2b3, type: 3}
   spawnIntervalMin: 1
   spawnIntervalMax: 2
   maxObjects: 0
@@ -1179,7 +1179,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!23 &1273032311
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1518,8 +1518,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c347106b66357e34f99e18a97970a4a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deadEnemy1: {fileID: 8929082375700027164, guid: 5c3e7267b6e4f9d4ca1b8315e863f245, type: 3}
-  sliceIterations: 7
+  deadEnemy1:
+  - {fileID: 3483663136166093168, guid: bbbd0ea6d3bfac44ab77bf338c95ee68, type: 3}
+  - {fileID: 6719601240092127392, guid: b3798763f9e32cc44a17100d1b962f62, type: 3}
+  - {fileID: 3604304018039248367, guid: 9ab859da9dcfaeb4fa7b9893f98e8070, type: 3}
+  - {fileID: 4956879745028560164, guid: f67d41bc29254674aac37d1e0d72e008, type: 3}
+  sliceIterations: 4
 --- !u!4 &2140427565
 Transform:
   m_ObjectHideFlags: 0

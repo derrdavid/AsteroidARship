@@ -7,7 +7,7 @@ using Random = UnityEngine.Random;
 public class SlicesStart : MonoBehaviour
 {
     [SerializeField]
-    private GameObject deadEnemy1;
+    private List<GameObject> deadEnemy1;
     [SerializeField]
     private int sliceIterations;
 
@@ -51,7 +51,7 @@ public class SlicesStart : MonoBehaviour
                 ArrayList tmp = new ArrayList();
                 tmp = obliterate(e);
                 slicedObj.AddRange(obliterateStep(tmp, step - 1));
-                if (slices.Count > 1)
+                if (!checkPrefab(e))
                 {
                     Destroy(e);
                 }
@@ -64,10 +64,13 @@ public class SlicesStart : MonoBehaviour
         }
         return null;
     }
-    public ArrayList sliceObj(GameObject toSlice, int step)
+    public ArrayList sliceObj(List<GameObject> toSlice, int step)
     {
         ArrayList slices = new ArrayList();
-        slices.Add(toSlice);
+        foreach (GameObject e in toSlice)
+        {
+            slices.Add(e);
+        }
         return obliterateStep(slices, step);
     }
     private Vector3 randomDirection()
@@ -78,5 +81,10 @@ public class SlicesStart : MonoBehaviour
     public ArrayList getDeadEnemy1()
     {
         return deadEnemy1Slices;
+    }
+    private bool checkPrefab(GameObject e)
+    {
+        String objName = e.scene.name;
+        return objName == null;
     }
 }

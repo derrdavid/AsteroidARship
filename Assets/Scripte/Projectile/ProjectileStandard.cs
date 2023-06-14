@@ -16,7 +16,9 @@ public class ProjectileStandard : Projectile
     public override void Update()
     {
         Vector3 newPosition = new Vector3(xPosition, gameObject.transform.position.y, targetZ);
+        gameObject.transform.LookAt(newPosition);
         gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, newPosition, moveSpeed * Time.deltaTime);
+        
         if (gameObject.transform.position.z <= targetZ)
         {
             GameObject.Find("AtriumManager").GetComponent<AtriumManager>().takeDamage(10);
