@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657815, g: 0.49641192, b: 0.57481617, a: 1}
+  m_IndirectSpecularColor: {r: 0.44402242, g: 0.49316543, b: 0.5722324, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1519,7 +1519,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deadEnemy1: {fileID: 8929082375700027164, guid: 5c3e7267b6e4f9d4ca1b8315e863f245, type: 3}
-  sliceIterations: 7
+  sliceIterations: 4
 --- !u!4 &2140427565
 Transform:
   m_ObjectHideFlags: 0
