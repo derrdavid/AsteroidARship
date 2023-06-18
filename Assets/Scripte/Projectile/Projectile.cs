@@ -18,7 +18,7 @@ public abstract class Projectile : MonoBehaviour
 
     // Bewege gameObject in z-Achse
     public abstract void Update();
-    public abstract void getHit(float damage);
+    public abstract void getHit(Vector3 hitPos, float damage);
 
     public void setHealth(float health)
     {

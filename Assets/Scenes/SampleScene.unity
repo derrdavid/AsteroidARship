@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44402242, g: 0.49316543, b: 0.5722324, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -684,7 +684,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.1
-  far clip plane: 20
+  far clip plane: 50
   field of view: 60
   orthographic: 0
   orthographic size: 5
@@ -915,9 +915,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 899391292}
-  - component: {fileID: 899391291}
   - component: {fileID: 899391293}
-  - component: {fileID: 899391294}
   m_Layer: 0
   m_Name: ProjectileOrigin
   m_TagString: Untagged
@@ -925,24 +923,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &899391291
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 899391290}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0115c28a2b5b202448d1594f443ccca1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 1268919551586408884, guid: f6a58afc286e1c6468383a95d14e08bc, type: 3}
-  spawnIntervalMin: 2
-  spawnIntervalMax: 4
-  maxObjects: 0
-  moveSpeed: 4
-  deadEnemyLists: {fileID: 0}
 --- !u!4 &899391292
 Transform:
   m_ObjectHideFlags: 0
@@ -951,7 +931,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 899391290}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: 17}
+  m_LocalPosition: {x: 0, y: 2, z: 20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -967,32 +947,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 899391290}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0115c28a2b5b202448d1594f443ccca1, type: 3}
+  m_Script: {fileID: 11500000, guid: 4d8c6325896a74e43837a65cedf42ada, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 1196303534189875630, guid: 1c7c6112405d67541951bf89651cc2b3, type: 3}
-  spawnIntervalMin: 1
-  spawnIntervalMax: 2
-  maxObjects: 0
-  moveSpeed: 3
-  deadEnemyLists: {fileID: 0}
---- !u!114 &899391294
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 899391290}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0115c28a2b5b202448d1594f443ccca1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 1268919551586408884, guid: 8bbff151b0cb1da4596a044c514c635f, type: 3}
-  spawnIntervalMin: 5
-  spawnIntervalMax: 7
-  maxObjects: 2
-  moveSpeed: 7
+  prefab: {fileID: 8929082375700027164, guid: c6adb63ad22b54342bfca6cc0c6598f4, type: 3}
+  spawnIntervalMin: 2
+  spawnIntervalMax: 4
+  maxObjects: 3
+  moveSpeed: 4
   deadEnemyLists: {fileID: 0}
 --- !u!1 &1107908854
 GameObject:
