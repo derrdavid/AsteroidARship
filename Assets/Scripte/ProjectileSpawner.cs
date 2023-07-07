@@ -10,11 +10,11 @@ public class ProjectileSpawner : MonoBehaviour
     [Range(0.0f, 50.0f)] public float spawnIntervalMax;
     [SerializeField] private float maxObjects = 3f;
     [SerializeField] private float moveSpeed = 7f;
+    [SerializeField] private float floatingIntensity = 3f;
     [SerializeField] private GameObject deadEnemyLists;
     private float timer = 0f;
     private float spawnTime;
     private List<GameObject> livingEnemies = new List<GameObject>();
-
     private void Update()
     {
         for (int i = 0; i < livingEnemies.Count; i++)
@@ -32,10 +32,11 @@ public class ProjectileSpawner : MonoBehaviour
             if (livingEnemies.Count < maxObjects)
             {
                 float randomX = Random.Range(-5, 5);
-                float randomZ = Random.Range(20, 30);
+                float randomZ = Random.Range(40, 50);
                 float randomY = Random.Range(3, 6);
                 Vector3 endPosition = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z);
                 GameObject newObject = Instantiate(prefab, new Vector3(endPosition.x, endPosition.y + randomY, endPosition.z + randomZ), Quaternion.identity);
+
                 Projectile projectileMove = newObject.GetComponent<Projectile>();
                 livingEnemies.Add(newObject);
 
@@ -47,7 +48,15 @@ public class ProjectileSpawner : MonoBehaviour
                     "oncompletetarget", gameObject,
                     "oncompleteparams", newObject
                 ));
-                projectileMove.set(Random.Range(this.moveSpeed - 3, this.moveSpeed), randomX, -17);
+                // Füge den "floating" Effekt hinzu
+                iTween.MoveBy(newObject, iTween.Hash(
+                    "amount", new Vector3(Random.Range(-floatingIntensity, floatingIntensity), Random.Range(-floatingIntensity - 1, floatingIntensity - 1), 0f),
+                    "time", moveSpeed,
+                    "easetype", iTween.EaseType.easeInOutQuad,
+                    "looptype", iTween.LoopType.pingPong
+                ));
+
+                projectileMove.set(Random.Range(moveSpeed, moveSpeed + 10), randomX, -17);
             }
         }
 
