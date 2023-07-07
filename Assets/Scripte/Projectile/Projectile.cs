@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class Projectile : MonoBehaviour
@@ -9,6 +8,8 @@ public abstract class Projectile : MonoBehaviour
     public float xPosition;
     public float targetZ = -17;
     public GameObject deathDouble;
+    private bool invincible = true;
+
 
     // setzen der Ausgangsposition
     void Start()
@@ -45,4 +46,13 @@ public abstract class Projectile : MonoBehaviour
         gameObject.GetComponent<Rigidbody>().AddForce(Vector3.up * 0.02f, ForceMode.Impulse);
         yield return new WaitForSeconds(2f);
     }
+    public void setInvincible(bool invincible)
+    {
+        this.invincible = invincible;
+    }
+    public bool getInvincible()
+    {
+        return this.invincible;
+    }
+
 }

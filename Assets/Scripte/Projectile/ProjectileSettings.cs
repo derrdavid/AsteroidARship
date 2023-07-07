@@ -6,12 +6,10 @@ public class ProjectileSettings : Projectile
 {
     [SerializeField] private bool rotate;
     [SerializeField] private bool angle;
-    public enum AllowedHitSides { Left, Right, Top, Bottom, Front, Back }
-    public List<AllowedHitSides> allowedSides;
+    [SerializeField] private enum AllowedHitSides { Left, Right, Top, Bottom, Front, Back }
+    [SerializeField] private List<AllowedHitSides> allowedSides;
     [SerializeField] private int childAmount;
     [SerializeField] private GameObject child;
-    private Quaternion localRotation;
-
     // setzen der Ausgangsposition
     void Start()
     {
@@ -37,40 +35,41 @@ public class ProjectileSettings : Projectile
     }
     public override void getHit(Vector3 hitPos, float damage)
     {
-
-
-        if (angle)
+        if (getInvincible() == false)
         {
-            if (getHitSide(hitPos))
+            if (angle)
+            {
+                if (getHitSide(hitPos))
+                    health -= damage;
+            }
+            else
+            {
                 health -= damage;
-        }
-        else
-        {
-            health -= damage;
-        }
-
-        if (childAmount > 0)
-        {
-            for (int i = 0; i < childAmount; i++)
-            {
-                float randomX = Random.Range(-2, 2);
-                float randomY = Random.Range(-2, 2);
-                Vector3 spawnPosition = new Vector3(randomX, 0f, randomY) + transform.position;
-                Quaternion spawnRotation = Quaternion.Euler(0f, Random.Range(0f, 360f), 0f);
-
-                GameObject newObj = Instantiate(child, spawnPosition, spawnRotation);
-                newObj.transform.localScale -= new Vector3(0.2f, 0.2f, 0.2f);
-                newObj.GetComponent<Projectile>().set(2.0f, newObj.gameObject.transform.position.x, -17);
             }
-        }
 
-        if (health <= 0)
-        {
-            if (childAmount == 0)
+            if (childAmount > 0)
             {
-                Instantiate(deathDouble, transform.position, Quaternion.identity);
+                for (int i = 0; i < childAmount; i++)
+                {
+                    float randomX = Random.Range(-2, 2);
+                    float randomY = Random.Range(-2, 2);
+                    Vector3 spawnPosition = new Vector3(randomX, 0f, randomY) + transform.position;
+                    Quaternion spawnRotation = Quaternion.Euler(0f, Random.Range(0f, 360f), 0f);
+
+                    GameObject newObj = Instantiate(child, spawnPosition, spawnRotation);
+                    newObj.transform.localScale -= new Vector3(0.2f, 0.2f, 0.2f);
+                    newObj.GetComponent<Projectile>().set(2.0f, newObj.gameObject.transform.position.x, -17);
+                }
             }
-            Destroy(this.gameObject);
+
+            if (health <= 0)
+            {
+                if (childAmount == 0)
+                {
+                    Instantiate(deathDouble, transform.position, Quaternion.identity);
+                }
+                Destroy(this.gameObject);
+            }
         }
     }
     private bool getHitSide(Vector3 hitPos)
