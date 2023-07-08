@@ -10,6 +10,8 @@ public class ProjectileSettings : Projectile
     [SerializeField] private List<AllowedHitSides> allowedSides;
     [SerializeField] private int childAmount;
     [SerializeField] private GameObject child;
+    [SerializeField] private ParticleSystem explosionParticle;
+    private bool crashed;
     // setzen der Ausgangsposition
     void Start()
     {
@@ -27,11 +29,11 @@ public class ProjectileSettings : Projectile
         {
             iTween.RotateBy(gameObject, new Vector3(0, 100, 30), 600);
         }
-        if (gameObject.transform.position.z <= targetZ)
+        if (gameObject.transform.position.z <= targetZ && crashed == false)
         {
-            GameObject.Find("AtriumManager").GetComponent<AtriumManager>().takeDamage(10);
-            Destroy(gameObject);
+            StartCoroutine(crash());
         }
+
     }
     public override void getHit(Vector3 hitPos, float damage)
     {
@@ -113,5 +115,15 @@ public class ProjectileSettings : Projectile
                 hit = true;
         }
         return hit;
+    }
+    private IEnumerator crash()
+    {
+        crashed = true;
+        GameObject.Find("AtriumManager").GetComponent<AtriumManager>().takeDamage(10);
+        explosionParticle.Play();
+        Instantiate(deathDouble, transform.position, Quaternion.identity);
+        gameObject.GetComponent<Renderer>().enabled = false;
+        yield return new WaitForSeconds(3f);
+        Destroy(gameObject);
     }
 }

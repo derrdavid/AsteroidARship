@@ -48,14 +48,14 @@ public class ProjectileSpawner : MonoBehaviour
                     "oncompletetarget", gameObject,
                     "oncompleteparams", newObject
                 ));
+
                 // Füge den "floating" Effekt hinzu
                 iTween.MoveBy(newObject, iTween.Hash(
                     "amount", new Vector3(Random.Range(-floatingIntensity, floatingIntensity), Random.Range(-floatingIntensity - 1, floatingIntensity - 1), 0f),
                     "time", moveSpeed,
                     "easetype", iTween.EaseType.easeInOutQuad,
-                    "looptype", iTween.LoopType.pingPong
+                "looptype", iTween.LoopType.pingPong
                 ));
-
                 projectileMove.set(Random.Range(moveSpeed, moveSpeed + 10), randomX, -17);
             }
         }
