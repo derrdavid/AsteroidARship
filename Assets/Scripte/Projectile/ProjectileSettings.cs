@@ -24,7 +24,6 @@ public class ProjectileSettings : Projectile
     {
         Vector3 newPosition = new Vector3(xPosition, gameObject.transform.position.y, targetZ);
         gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, newPosition, moveSpeed * Time.deltaTime);
-
         if (rotate)
         {
             iTween.RotateBy(gameObject, new Vector3(0, 100, 30), 600);

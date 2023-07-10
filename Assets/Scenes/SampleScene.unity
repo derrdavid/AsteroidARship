@@ -1065,7 +1065,7 @@ MonoBehaviour:
   spawnIntervalMax: 4
   maxObjects: 3
   moveSpeed: 4
-  floatingIntensity: 4.19
+  floatingIntensity: 11.39
   deadEnemyLists: {fileID: 0}
 --- !u!1 &1107908854
 GameObject:
@@ -1452,7 +1452,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9aa4348290784b2468144a97eb15d8d7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2d831f34f10e1d54c8d1f35fd5d1449a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1530,6 +1530,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cefdcbef41a06e439137f5b3dc08bc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shootingscript: {fileID: 0}
 --- !u!1 &2028631504
 GameObject:
   m_ObjectHideFlags: 0

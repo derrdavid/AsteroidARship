@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
+    private int score;
+    [SerializeField]
+    private Shootingscript shootingscript;
+    private Wave wave;
+
     // Start is called before the first frame update
     void Start()
     {
