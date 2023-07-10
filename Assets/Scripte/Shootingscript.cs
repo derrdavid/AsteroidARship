@@ -16,6 +16,7 @@ public class Shootingscript : MonoBehaviour
     [SerializeField]
     private LayerMask enemys;
     public float damage;
+    public int kills;
 
     Ray ray;
 
@@ -50,6 +51,10 @@ public class Shootingscript : MonoBehaviour
 
             if (hit.collider.tag == "Enemy")
             {
+                if (hit.collider.GetComponent<Projectile>().getHealth() - damage <= 0 && !hit.collider.GetComponent<Projectile>().getInvincible())
+                {
+                    kills++;
+                }
                 hit.collider.GetComponent<Projectile>().getHit(hit.point, damage);
             }
         }

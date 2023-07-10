@@ -1016,6 +1016,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   damage: 10
+  kills: 0
 --- !u!1 &899391290
 GameObject:
   m_ObjectHideFlags: 0
@@ -1026,6 +1027,7 @@ GameObject:
   m_Component:
   - component: {fileID: 899391292}
   - component: {fileID: 899391293}
+  - component: {fileID: 899391294}
   m_Layer: 0
   m_Name: ProjectileOrigin
   m_TagString: Untagged
@@ -1060,13 +1062,87 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d8c6325896a74e43837a65cedf42ada, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 8929082375700027164, guid: c6adb63ad22b54342bfca6cc0c6598f4, type: 3}
-  spawnIntervalMin: 2
-  spawnIntervalMax: 4
-  maxObjects: 3
+  prefab: {fileID: 8929082375700027164, guid: 294c3d925069c8343ac4142f762ce365, type: 3}
+  randomSpawnInterval: {x: 3, y: 6}
+  randomYInterval: {x: -3, y: 3}
+  maxObjects: 8
   moveSpeed: 4
-  floatingIntensity: 11.39
-  deadEnemyLists: {fileID: 0}
+  floatingIntensityX: {x: -7.97, y: 6.507714}
+  floatingIntensityY: {x: 0, y: 0}
+--- !u!114 &899391294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 899391290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d8c6325896a74e43837a65cedf42ada, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 8929082375700027164, guid: dac01c5d92cf0d7439704f60330c0799, type: 3}
+  randomSpawnInterval: {x: 0, y: 0}
+  randomYInterval: {x: 0, y: 0}
+  maxObjects: 10
+  moveSpeed: 7
+  floatingIntensityX: {x: 0, y: 0}
+  floatingIntensityY: {x: 0, y: 0}
+--- !u!1 &1099087854
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1099087856}
+  - component: {fileID: 1099087855}
+  m_Layer: 0
+  m_Name: WaveManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1099087855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1099087854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6f1cf4052637324a8c0b1394cee53d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: 0
+  shootingscript: {fileID: 804101580}
+  waves:
+  - _waveNumber: 1
+    _scoreGoal: 5
+    projectileSpawners:
+    - {fileID: 899391293}
+  - _waveNumber: 2
+    _scoreGoal: 10
+    projectileSpawners:
+    - {fileID: 899391294}
+--- !u!4 &1099087856
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1099087854}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.6833967, y: 1.9829441, z: 2.9474561}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1107908854
 GameObject:
   m_ObjectHideFlags: 0
@@ -1480,7 +1556,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1489785450}
   - component: {fileID: 1489785449}
-  - component: {fileID: 1489785451}
   m_Layer: 0
   m_Name: AtriumManager
   m_TagString: Untagged
@@ -1518,19 +1593,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1489785451
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1489785448}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3cefdcbef41a06e439137f5b3dc08bc3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shootingscript: {fileID: 0}
 --- !u!1 &2028631504
 GameObject:
   m_ObjectHideFlags: 0
