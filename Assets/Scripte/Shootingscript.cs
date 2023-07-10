@@ -50,7 +50,7 @@ public class Shootingscript : MonoBehaviour
 
             if (hit.collider.tag == "Enemy")
             {
-                hit.collider.GetComponent<Projectile>().getHit(damage);
+                hit.collider.GetComponent<Projectile>().getHit(hit.point, damage);
             }
         }
         /*else if (hits.Count > 0)
