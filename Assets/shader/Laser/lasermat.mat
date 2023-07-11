@@ -49,12 +49,12 @@ Material:
     - _BUILTIN_QueueControl: 0
     - _BUILTIN_QueueOffset: 0
     - _dissolve: 0
-    - _noiseAmount: 0.172
+    - _noiseAmount: 0.263
     - _noisePower: 3
     - _noisescale: 25
-    - _thickness: 5.48
+    - _thickness: 5.82
     m_Colors:
     - _LaserColor: {r: 4, g: 1.082353, b: 1.082353, a: 1}
     - _noiseSpeed: {r: -0.7, g: 0, b: 0, a: 0}
-    - _speed: {r: -6, g: 0, b: 0, a: 0}
+    - _speed: {r: 6, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
