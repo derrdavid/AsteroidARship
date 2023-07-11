@@ -43,7 +43,8 @@ public class Projectile : MonoBehaviour
         {
             StartCoroutine(crash());
         }
-
+        if (health <= 0)
+            Destroy(gameObject);
     }
 
     public float getHealth()
@@ -167,10 +168,15 @@ public class Projectile : MonoBehaviour
     private IEnumerator crash()
     {
         crashed = true;
+
         GameObject.Find("AtriumManager").GetComponent<AtriumManager>().takeDamage(10);
         explosionParticle.Play();
         Instantiate(deathDouble, transform.position, Quaternion.identity);
-        gameObject.GetComponent<Renderer>().enabled = false;
+        gameObject.transform.localScale = new Vector3(0f, 0f, 0f);
+        /**
+        if (gameObject.GetComponent<Renderer>() != null)
+            gameObject.GetComponent<Renderer>().enabled = false;
+            */
         yield return new WaitForSeconds(3f);
         Destroy(gameObject);
     }

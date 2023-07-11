@@ -1387,7 +1387,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d8c6325896a74e43837a65cedf42ada, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 8929082375700027164, guid: 294c3d925069c8343ac4142f762ce365, type: 3}
+  prefab: {fileID: 1196303534189875630, guid: 7b441b245baa8c040a066c47dc16fdb4, type: 3}
   randomSpawnInterval: {x: 3, y: 6}
   randomYInterval: {x: -3, y: 3}
   maxObjects: 8
@@ -1526,7 +1526,7 @@ MonoBehaviour:
     projectileSpawners:
     - {fileID: 899391293}
   - _waveNumber: 2
-    _scoreGoal: 10
+    _scoreGoal: 20
     projectileSpawners:
     - {fileID: 899391294}
 --- !u!4 &1099087856
