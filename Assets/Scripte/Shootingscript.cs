@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Device;
+using UnityEngine.InputSystem.HID;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
 using static UnityEngine.GraphicsBuffer;
@@ -31,6 +32,8 @@ public class Shootingscript : MonoBehaviour
     private GameObject firePoint;
     [SerializeField]
     private GameObject firePoint2;
+    [SerializeField]
+    private GameObject defaultTarget;
 
     private bool shotFired = false;
     private Vector3 shotTarget;
@@ -52,15 +55,15 @@ public class Shootingscript : MonoBehaviour
     {
         Debug.DrawRay(camera.transform.position, camera.transform.forward * 100, Color.red);
         // �berpr�fen, ob der Bildschirm ber�hrt wurde
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !shotFired)
         {
             Raycast();
         }
-        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began && !shotFired)
         {
             Raycast();
         }
-        if (shotFired == true)
+        if (shotFired)
         {
             timeSinceLastShot += Time.deltaTime;
             if (timeSinceLastShot > downtime)
@@ -76,36 +79,35 @@ public class Shootingscript : MonoBehaviour
         // Erstellen Sie einen Raycast aus dem aktuellen Bildschirmpunkt
         List<ARRaycastHit> hits = new List<ARRaycastHit>();
         raycastManager.Raycast(new Vector2(Screen.width / 2, Screen.height / 2), hits, TrackableType.AllTypes);
-
+        if (secondShot)
+        {
+            secondShot = !secondShot;
+            currentFirePoint = firePoint2.transform.position;
+        }
+        else
+        {
+            secondShot = !secondShot;
+            currentFirePoint = firePoint.transform.position;
+        }
         // ueberpruefen Sie, ob ein Treffer vorhanden ist
         if (Physics.Raycast(camera.transform.position, camera.transform.forward, out RaycastHit hit, 100, enemys, QueryTriggerInteraction.UseGlobal))
         {
+            shoot(hit.point);
             if (hit.collider.tag == "Enemy")
             {
-                shotTarget = hit.point;
-                if (secondShot){
-                    secondShot = !secondShot;
-                    currentFirePoint = firePoint2.transform.position;
-                }
-                else
-                {
-                    secondShot = !secondShot;
-                    currentFirePoint = firePoint.transform.position;
-                }
-
-                enableLaser();
-                shotFired = true;
                 hit.collider.GetComponent<Projectile>().getHit(hit.point, damage);
             }
         }
-        /*else if (hits.Count > 0)
+        else
         {
-            // Holen Sie sich das getroffene GameObject und die hitPose
-            Pose hitPose = hits[0].pose;
-            placeTracker(hitPose.position);
-            // Geben Sie das GameObject im Debug.Log aus
-            Debug.Log("Hit Pose: " + hitPose.position);
-        }*/
+            shoot(defaultTarget.transform.position);
+        }
+    }
+    void shoot(Vector3 target)
+    {
+        shotTarget = target;
+        enableLaser();
+        shotFired = true;
     }
     void enableLaser()
     {
