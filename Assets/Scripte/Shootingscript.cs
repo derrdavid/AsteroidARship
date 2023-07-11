@@ -4,25 +4,49 @@ using UnityEngine;
 using UnityEngine.Device;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
+using static UnityEngine.GraphicsBuffer;
 using Screen = UnityEngine.Device.Screen;
 
 public class Shootingscript : MonoBehaviour
 {
+    [Header("targetSettings")]
     public ARRaycastManager raycastManager;
-    [SerializeField]
-    private GameObject tracker;
     [SerializeField]
     private GameObject camera;
     [SerializeField]
     private LayerMask enemys;
-    public float damage;
+    [SerializeField]
+    private float downtime = 1;
+    [SerializeField]
+    private float damage;
+    private float timeSinceLastShot = 0;
 
     Ray ray;
+
+    //fx Values
+    [Header("fxSettings")]
+    [SerializeField]
+    private GameObject laserPrefap;
+    [SerializeField]
+    private GameObject firePoint;
+    [SerializeField]
+    private GameObject firePoint2;
+
+    private bool shotFired = false;
+    private Vector3 shotTarget;
+    private bool secondShot = false;
+    private Vector3 currentFirePoint;
+    private LineRenderer lineRenderer;
+    private GameObject spawnedLaser;
 
     // Update is called once per frame
     private void Start()
     {
         ray = new Ray(camera.transform.position, camera.transform.forward);
+        spawnedLaser = Instantiate(laserPrefap) as GameObject;
+        lineRenderer = spawnedLaser.transform.GetChild(0).gameObject.GetComponent<LineRenderer>();
+        spawnedLaser.transform.position = new Vector3(0, 0, 0);
+        disableLaser();
     }
     void Update()
     {
@@ -36,6 +60,16 @@ public class Shootingscript : MonoBehaviour
         {
             Raycast();
         }
+        if (shotFired == true)
+        {
+            timeSinceLastShot += Time.deltaTime;
+            if (timeSinceLastShot > downtime)
+            {
+                timeSinceLastShot = 0;
+                shotFired = false;
+                disableLaser();
+            }
+        }
     }
     void Raycast()
     {
@@ -46,10 +80,21 @@ public class Shootingscript : MonoBehaviour
         // ueberpruefen Sie, ob ein Treffer vorhanden ist
         if (Physics.Raycast(camera.transform.position, camera.transform.forward, out RaycastHit hit, 100, enemys, QueryTriggerInteraction.UseGlobal))
         {
-            placeTracker(hit.point);
-
             if (hit.collider.tag == "Enemy")
             {
+                shotTarget = hit.point;
+                if (secondShot){
+                    secondShot = !secondShot;
+                    currentFirePoint = firePoint2.transform.position;
+                }
+                else
+                {
+                    secondShot = !secondShot;
+                    currentFirePoint = firePoint.transform.position;
+                }
+
+                enableLaser();
+                shotFired = true;
                 hit.collider.GetComponent<Projectile>().getHit(hit.point, damage);
             }
         }
@@ -62,8 +107,16 @@ public class Shootingscript : MonoBehaviour
             Debug.Log("Hit Pose: " + hitPose.position);
         }*/
     }
-    void placeTracker(Vector3 pos)
+    void enableLaser()
     {
-        tracker.transform.position = pos;
+        spawnedLaser.SetActive(true);
+        var pos = new Vector3[2];
+        pos[0] = currentFirePoint;
+        pos[1] = shotTarget;
+        lineRenderer.SetPositions(pos);
+    }
+    void disableLaser()
+    {
+        spawnedLaser.SetActive(false);
     }
 }
