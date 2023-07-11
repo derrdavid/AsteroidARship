@@ -10,8 +10,6 @@ public class Die : MonoBehaviour
     [SerializeField]
     private bool gravity = false;
     [SerializeField]
-    private int cuts = 3;
-    [SerializeField]
     private int explosionForce = 3;
     private GameObject prefab;
     private void Start()
@@ -42,12 +40,12 @@ public class Die : MonoBehaviour
     }
     private Vector3 randomUpwardsDirection()
     {
-        Vector3 direction =  (Random.insideUnitSphere + Vector3.up).normalized;
+        Vector3 direction = (Random.insideUnitSphere + Vector3.up).normalized;
         return direction;
     }
     private Vector3 randomBackwardsDirection()
     {
-        Vector3 direction = (Random.insideUnitSphere + new Vector3(0,0,1)).normalized;
+        Vector3 direction = (Random.insideUnitSphere + new Vector3(0, 0, 1)).normalized;
         return direction;
     }
 }

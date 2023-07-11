@@ -13,10 +13,9 @@ public class Shootingscript : MonoBehaviour
     [Header("targetSettings")]
     public ARRaycastManager raycastManager;
     [SerializeField]
-    private GameObject camera;
+    private GameObject mainCamera;
     [SerializeField]
     private LayerMask enemys;
-    public float damage;
     public int kills;
     [SerializeField]
     private float downtime = 1;
@@ -47,7 +46,7 @@ public class Shootingscript : MonoBehaviour
     // Update is called once per frame
     private void Start()
     {
-        ray = new Ray(camera.transform.position, camera.transform.forward);
+        ray = new Ray(mainCamera.transform.position, mainCamera.transform.forward);
         spawnedLaser = Instantiate(laserPrefap) as GameObject;
         lineRenderer = spawnedLaser.transform.GetChild(0).gameObject.GetComponent<LineRenderer>();
         spawnedLaser.transform.position = new Vector3(0, 0, 0);
@@ -55,7 +54,7 @@ public class Shootingscript : MonoBehaviour
     }
     void Update()
     {
-        Debug.DrawRay(camera.transform.position, camera.transform.forward * 100, Color.red);
+        Debug.DrawRay(mainCamera.transform.position, mainCamera.transform.forward * 100, Color.red);
         // �berpr�fen, ob der Bildschirm ber�hrt wurde
         if (Input.GetMouseButtonDown(0) && !shotFired)
         {
@@ -92,7 +91,7 @@ public class Shootingscript : MonoBehaviour
             currentFirePoint = firePoint.transform.position;
         }
         // ueberpruefen Sie, ob ein Treffer vorhanden ist
-        if (Physics.Raycast(camera.transform.position, camera.transform.forward, out RaycastHit hit, 100, enemys, QueryTriggerInteraction.UseGlobal))
+        if (Physics.Raycast(mainCamera.transform.position, mainCamera.transform.forward, out RaycastHit hit, 100, enemys, QueryTriggerInteraction.UseGlobal))
         {
             shoot(hit.point);
             if (hit.collider.tag == "Enemy")
