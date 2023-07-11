@@ -49,22 +49,25 @@ public class WaveManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(actualWave);
-
-        score = shootingscript.kills;
-        switch (score)
+        if (actualWave >= 1)
         {
-            case var s when waves[actualWave - 1].scoreGoal == score
-            && !waves[actualWave - 1].increased
-            && waves.Length > actualWave:
-                increaseWave();
-                break;
 
+            score = shootingscript.kills;
+            switch (score)
+            {
+                case var s when waves[actualWave - 1].scoreGoal == score
+                && !waves[actualWave - 1].increased
+                && waves.Length > actualWave:
+                    increaseWave();
+                    break;
+
+            }
         }
     }
     private void increaseWave()
     {
         actualWave++;
+        Debug.Log("WELLE: " + actualWave);
         foreach (Wave wave in waves)
         {
             if (wave.waveNumber != actualWave)
