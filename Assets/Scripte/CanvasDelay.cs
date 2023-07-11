@@ -1,32 +1,30 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.XR.ARFoundation;
-using Unity.XR.CoreUtils;
 
 public class CanvasDelay : MonoBehaviour
 {
-    [SerializeField] private Vector2 amount;
-    [SerializeField] private float lerp = .5f;
-    private XROrigin xrOrigin;
+    [SerializeField] private Camera mainCamera;
+    [SerializeField][Range(0, 1)] private float amount = .3f;
 
-    void Start()
+    private Quaternion targetRotation;
+    private Vector3 targetPosition;
+
+    private void Start()
     {
-        xrOrigin = FindObjectOfType<XROrigin>();
+        targetRotation = mainCamera.transform.rotation;
+        targetPosition = mainCamera.transform.position;
     }
 
-    void Update()
+    private void Update()
     {
-        if (ARSession.state != ARSessionState.SessionTracking)
-        {
-            return;
-        }
+        Quaternion cameraRotation = mainCamera.transform.rotation;
+        Quaternion deltaRotation = cameraRotation * Quaternion.Inverse(targetRotation);
 
-        Vector3 rotation = xrOrigin.transform.rotation.eulerAngles;
-        float x = rotation.y;
-        float y = rotation.x;
+        targetRotation = Quaternion.Slerp(targetRotation, cameraRotation, amount);
+        targetPosition += deltaRotation * (mainCamera.transform.position - targetPosition);
 
-        transform.localEulerAngles = new Vector3(
-            Mathf.LerpAngle(transform.localEulerAngles.x, y * amount.y, lerp),
-            Mathf.LerpAngle(transform.localEulerAngles.y, x * amount.x, lerp),
-            0);
+        transform.rotation = targetRotation;
+        transform.position = targetPosition;
     }
 }
