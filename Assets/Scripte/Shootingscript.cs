@@ -12,6 +12,8 @@ public class Shootingscript : MonoBehaviour
 {
     [Header("targetSettings")]
     public ARRaycastManager raycastManager;
+
+    [SerializeField] private Animator animator;
     [SerializeField]
     private GameObject mainCamera;
     [SerializeField]
@@ -72,6 +74,7 @@ public class Shootingscript : MonoBehaviour
                 timeSinceLastShot = 0;
                 shotFired = false;
                 disableLaser();
+                animator.SetBool("targeted", false);
             }
         }
     }
@@ -102,6 +105,7 @@ public class Shootingscript : MonoBehaviour
                     kills++;
                 }
                 hit.collider.GetComponent<Projectile>().getHit(hit.point, damage);
+                animator.SetBool("targeted", true);
             }
         }
         else
