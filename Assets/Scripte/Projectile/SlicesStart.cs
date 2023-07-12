@@ -38,7 +38,10 @@ public class SlicesStart : MonoBehaviour
 
         ArrayList slices = new ArrayList();
         slices.AddRange(SliceHandler.Slice(plane, toSlice));
-
+        foreach (GameObject e in slices)
+        {
+            e.GetComponent<MeshCollider>().enabled = false;
+        }
         return slices;
     }
     public ArrayList obliterateStep(ArrayList slices, int step)
