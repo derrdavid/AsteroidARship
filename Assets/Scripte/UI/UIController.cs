@@ -6,7 +6,7 @@ using TMPro;
 
 public class UIController : MonoBehaviour
 {
-    [SerializeField] private Slider healthBarSlider;
+
     [SerializeField] private TextMeshProUGUI coordinatesText;
     [SerializeField] private TextMeshProUGUI coordinatesText2;
     [SerializeField] private WaveManager waveManager;
@@ -14,15 +14,6 @@ public class UIController : MonoBehaviour
     [SerializeField] private Shootingscript shootingscript;
     [SerializeField] private TextMeshProUGUI killCountText;
 
-    public void setMax(int health)
-    {
-        healthBarSlider.maxValue = health;
-        healthBarSlider.value = health;
-    }
-    public void setHealth(int health)
-    {
-        healthBarSlider.value = health;
-    }
     private void Update()
     {
         coordinatesText.text = gameObject.transform.position.ToString();

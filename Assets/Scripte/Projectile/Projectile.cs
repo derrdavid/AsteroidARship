@@ -169,7 +169,7 @@ public class Projectile : MonoBehaviour
     {
         crashed = true;
 
-        GameObject.Find("AtriumManager").GetComponent<AtriumManager>().takeDamage(10);
+        GameObject.Find("Manager").GetComponent<AtriumManager>().takeDamage(10);
         explosionParticle.Play();
         Instantiate(deathDouble, transform.position, Quaternion.identity);
         gameObject.transform.localScale = new Vector3(0f, 0f, 0f);

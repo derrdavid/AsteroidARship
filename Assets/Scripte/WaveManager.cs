@@ -67,7 +67,6 @@ public class WaveManager : MonoBehaviour
     private void increaseWave()
     {
         actualWave++;
-        Debug.Log("WELLE: " + actualWave);
         foreach (Wave wave in waves)
         {
             if (wave.waveNumber != actualWave)
