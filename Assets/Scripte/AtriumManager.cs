@@ -6,16 +6,24 @@ using UnityEngine.UI;
 public class AtriumManager : MonoBehaviour
 {
     public int maxHealth = 100;
-    public int currentHealth;
     public UIController healthBar;
+    [SerializeField] private BarController barController;
     private void Start()
     {
-        currentHealth = maxHealth;
-        healthBar.setMax(maxHealth);
+        barController.setValue(maxHealth);
     }
     public void takeDamage(int damage)
     {
-        currentHealth -= damage;
-        healthBar.setHealth(currentHealth);
+        barController.decrease(damage);
+    }
+
+    public void heal(int heal)
+    {
+        barController.increase(heal);
+    }
+
+    public int getCurrentHealth()
+    {
+        return (int)barController.getCurrentHealth();
     }
 }
