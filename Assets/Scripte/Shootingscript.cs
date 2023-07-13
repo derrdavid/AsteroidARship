@@ -96,7 +96,7 @@ public class Shootingscript : MonoBehaviour
         // ueberpruefen Sie, ob ein Treffer vorhanden ist
         if (Physics.Raycast(mainCamera.transform.position, mainCamera.transform.forward, out RaycastHit hit, 100, enemys, QueryTriggerInteraction.UseGlobal))
         {
-            print(hit.collider.gameObject.name);
+            //print(hit.collider.gameObject.name);
             shoot(hit.point);
             if (hit.collider.tag == "Enemy")
             {
@@ -130,5 +130,9 @@ public class Shootingscript : MonoBehaviour
     void disableLaser()
     {
         spawnedLaser.SetActive(false);
+    }
+    public int getKills()
+    {
+        return kills;
     }
 }

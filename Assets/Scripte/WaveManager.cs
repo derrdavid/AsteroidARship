@@ -80,4 +80,8 @@ public class WaveManager : MonoBehaviour
             }
         }
     }
+    public int getWave()
+    {
+        return actualWave;
+    }
 }
