@@ -11,6 +11,8 @@ public class ProjectileSpawner : MonoBehaviour
     [SerializeField][MinMaxSlider(-5.0f, 5.0f)] private Vector2 randomYInterval;
     [SerializeField][Range(0, 20)] private int maxObjects;
     [SerializeField][Range(0, 20)] private float moveSpeed;
+    [SerializeField] private float startSpeed = 5f;
+    [SerializeField] private float targetZ = 1;
     [SerializeField][MinMaxSlider(-10, 10)] private Vector2 floatingIntensityX;
     [SerializeField][MinMaxSlider(-10, 10)] private Vector2 floatingIntensityY;
     private float timer = 0f;
@@ -46,7 +48,7 @@ public class ProjectileSpawner : MonoBehaviour
 
                     iTween.MoveTo(newObject, iTween.Hash(
                         "position", endPosition,
-                        "speed", 5f,
+                        "speed", startSpeed,
                         "easetype", iTween.EaseType.easeInCirc,
                         "oncomplete", "OnMovementComplete",
                         "oncompletetarget", gameObject,
@@ -60,7 +62,7 @@ public class ProjectileSpawner : MonoBehaviour
                         "easetype", iTween.EaseType.easeInOutQuad,
                         "looptype", iTween.LoopType.pingPong
                     ));
-                    projectileMove.set(Random.Range(moveSpeed, moveSpeed + 10), randomX, -17);
+                    projectileMove.set(Random.Range(moveSpeed, moveSpeed + 10), randomX, targetZ);
                 }
             }
         }

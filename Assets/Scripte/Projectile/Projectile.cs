@@ -8,7 +8,7 @@ public class Projectile : MonoBehaviour
     [SerializeField] private float health = 10f;
     [SerializeField] private float moveSpeed;
     [SerializeField] private float xPosition;
-    [SerializeField] private float targetZ = -17;
+    private float targetZ = 1;
     [SerializeField] private GameObject deathDouble;
 
     // advanced Attributes
@@ -109,7 +109,7 @@ public class Projectile : MonoBehaviour
 
                     GameObject newObj = Instantiate(child, spawnPosition, spawnRotation);
                     newObj.transform.localScale -= new Vector3(0.2f, 0.2f, 0.2f);
-                    newObj.GetComponent<Projectile>().set(2.0f, newObj.gameObject.transform.position.x, -17);
+                    newObj.GetComponent<Projectile>().set(2.0f, newObj.gameObject.transform.position.x, targetZ);
                 }
             }
 
