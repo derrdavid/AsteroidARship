@@ -7,7 +7,7 @@ public class AtriumManager : MonoBehaviour
 {
     public int maxHealth = 100;
     public int currentHealth;
-    public HealthBar healthBar;
+    public UIController healthBar;
     private void Start()
     {
         currentHealth = maxHealth;
