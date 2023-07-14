@@ -11,13 +11,15 @@ public class Die : MonoBehaviour
     private bool gravity = false;
     [SerializeField]
     private int explosionForce = 3;
+    [SerializeField]
+    private DEAD_ENEMY_TYPE type;
     private GameObject prefab;
     private void Start()
     {
         prefab = GameObject.Find("DeadEnemys");
 
         ArrayList slices = new ArrayList();
-        slices = prefab.GetComponent<SlicesStart>().getDeadEnemy1();
+        slices = prefab.GetComponent<SlicesStart>().getDeadEnemy(type);
         foreach (GameObject e in slices)
         {
             float randomTime = Random.Range(2.0f, 4.0f);

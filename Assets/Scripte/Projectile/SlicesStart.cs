@@ -3,19 +3,36 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
-
+public enum DEAD_ENEMY_TYPE
+{
+    UFO,
+    ASTEROID,
+    SHIELDBEARER,
+}
 public class SlicesStart : MonoBehaviour
 {
+
     [SerializeField]
-    private List<GameObject> deadEnemy1;
+    private List<GameObject> DeadEnemyUfo;
+    [SerializeField]
+    private List<GameObject> DeadEnemyAsteroid;
+    [SerializeField]
+    private List<GameObject> DeadEnemyShield;
     [SerializeField]
     private int sliceIterations;
 
-    private ArrayList deadEnemy1Slices;
+    private ArrayList DeadEnemyUfoSlices;
+    private ArrayList DeadEnemyAsteroidSlices;
+    private ArrayList DeadEnemyShieldSlices;
     // Start is called before the first frame update
     void Start()
     {
-        deadEnemy1Slices = sliceObj(deadEnemy1, sliceIterations);
+        if (DeadEnemyUfo != null)
+            DeadEnemyUfoSlices = sliceObj(DeadEnemyUfo, sliceIterations);
+        if (DeadEnemyAsteroid != null)
+            DeadEnemyAsteroidSlices = sliceObj(DeadEnemyAsteroid, sliceIterations);
+        if (DeadEnemyShield != null)
+            DeadEnemyShieldSlices = sliceObj(DeadEnemyShield, sliceIterations);
     }
 
     public ArrayList obliterate(GameObject toSlice)
@@ -81,9 +98,17 @@ public class SlicesStart : MonoBehaviour
         Vector3 direction = Random.insideUnitSphere.normalized;
         return direction;
     }
-    public ArrayList getDeadEnemy1()
+    public ArrayList getDeadEnemy(DEAD_ENEMY_TYPE type)
     {
-        return deadEnemy1Slices;
+        switch ((int)type){
+            case 0:
+                return DeadEnemyUfoSlices;
+            case 1:
+                return DeadEnemyAsteroidSlices;
+            case 2:
+                return DeadEnemyShieldSlices;
+        }
+        return null;
     }
     private bool checkPrefab(GameObject e)
     {
