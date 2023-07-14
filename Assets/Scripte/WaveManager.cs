@@ -36,6 +36,8 @@ public class WaveManager : MonoBehaviour
 {
     public int score;
     private int actualWave = 0;
+    [SerializeField] private float waveCoolDown = 15f;
+    private float remainingTime;
     [SerializeField] private Shootingscript shootingscript;
     [SerializeField] private Wave[] waves;
 
@@ -43,7 +45,7 @@ public class WaveManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        increaseWave();
+        StartCoroutine(increaseWave());
     }
 
     // Update is called once per frame
@@ -57,15 +59,29 @@ public class WaveManager : MonoBehaviour
             {
                 case var s when waves[actualWave - 1].scoreGoal == score
                 && !waves[actualWave - 1].increased
-                && waves.Length > actualWave:
-                    increaseWave();
+                && waves.Length > actualWave
+                && remainingTime == 0:
+                    StartCoroutine(increaseWave());
                     break;
 
             }
         }
     }
-    private void increaseWave()
+    private IEnumerator increaseWave()
     {
+        if (actualWave > 0)
+        {
+            waves[actualWave - 1].activate(false);
+        }
+
+        remainingTime = waveCoolDown;
+
+        while (remainingTime > 0)
+        {
+            yield return new WaitForSeconds(1f);
+            remainingTime--;
+        }
+
         actualWave++;
         foreach (Wave wave in waves)
         {
@@ -78,6 +94,10 @@ public class WaveManager : MonoBehaviour
                 wave.activate(true);
             }
         }
+    }
+    public float getWaveCoolDown()
+    {
+        return remainingTime;
     }
     public int getWave()
     {

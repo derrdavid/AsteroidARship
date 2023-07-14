@@ -11,8 +11,10 @@ public class UIController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI coordinatesText2;
     [SerializeField] private WaveManager waveManager;
     [SerializeField] private TextMeshProUGUI waveCountText;
+    [SerializeField] private TextMeshProUGUI waveCoolDownText;
     [SerializeField] private Shootingscript shootingscript;
     [SerializeField] private TextMeshProUGUI killCountText;
+
 
     private void Update()
     {
@@ -20,5 +22,6 @@ public class UIController : MonoBehaviour
         coordinatesText2.text = (Mathf.Round(Time.realtimeSinceStartup)).ToString();
         waveCountText.text = waveManager.getWave().ToString();
         killCountText.text = shootingscript.getKills().ToString();
+        waveCoolDownText.text = waveManager.getWaveCoolDown().ToString();
     }
 }
