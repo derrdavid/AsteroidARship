@@ -44,6 +44,7 @@ public class Shootingscript : MonoBehaviour
     private Vector3 currentFirePoint;
     private LineRenderer lineRenderer;
     private GameObject spawnedLaser;
+    private bool shotTriggered;
 
     // Update is called once per frame
     private void Start()
@@ -58,7 +59,7 @@ public class Shootingscript : MonoBehaviour
     {
         Debug.DrawRay(mainCamera.transform.position, mainCamera.transform.forward * 100, Color.red);
         // �berpr�fen, ob der Bildschirm ber�hrt wurde
-        if (Input.GetMouseButtonDown(0) && !shotFired)
+        if (shotTriggered && !shotFired)
         {
             Raycast();
         }
@@ -118,6 +119,11 @@ public class Shootingscript : MonoBehaviour
         shotTarget = target;
         enableLaser();
         shotFired = true;
+    }
+
+    public void triggerShot(bool triggered)
+    {
+        shotTriggered = triggered;
     }
     void enableLaser()
     {
