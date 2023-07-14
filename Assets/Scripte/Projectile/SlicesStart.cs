@@ -13,26 +13,26 @@ public class SlicesStart : MonoBehaviour
 {
 
     [SerializeField]
-    private List<GameObject> deadEnemy1;
+    private List<GameObject> DeadEnemyUfo;
     [SerializeField]
-    private List<GameObject> deadEnemy2;
+    private List<GameObject> DeadEnemyAsteroid;
     [SerializeField]
-    private List<GameObject> deadEnemy3;
+    private List<GameObject> DeadEnemyShield;
     [SerializeField]
     private int sliceIterations;
 
-    private ArrayList deadEnemy1Slices;
-    private ArrayList deadEnemy2Slices;
-    private ArrayList deadEnemy3Slices;
+    private ArrayList DeadEnemyUfoSlices;
+    private ArrayList DeadEnemyAsteroidSlices;
+    private ArrayList DeadEnemyShieldSlices;
     // Start is called before the first frame update
     void Start()
     {
-        if (deadEnemy1 != null)
-            deadEnemy1Slices = sliceObj(deadEnemy1, sliceIterations);
-        if (deadEnemy2 != null)
-            deadEnemy2Slices = sliceObj(deadEnemy2, sliceIterations);
-        if (deadEnemy3 != null)
-            deadEnemy3Slices = sliceObj(deadEnemy3, sliceIterations);
+        if (DeadEnemyUfo != null)
+            DeadEnemyUfoSlices = sliceObj(DeadEnemyUfo, sliceIterations);
+        if (DeadEnemyAsteroid != null)
+            DeadEnemyAsteroidSlices = sliceObj(DeadEnemyAsteroid, sliceIterations);
+        if (DeadEnemyShield != null)
+            DeadEnemyShieldSlices = sliceObj(DeadEnemyShield, sliceIterations);
     }
 
     public ArrayList obliterate(GameObject toSlice)
@@ -102,11 +102,11 @@ public class SlicesStart : MonoBehaviour
     {
         switch ((int)type){
             case 0:
-                return deadEnemy1Slices;
+                return DeadEnemyUfoSlices;
             case 1:
-                return deadEnemy2Slices;
+                return DeadEnemyAsteroidSlices;
             case 2:
-                return deadEnemy3Slices;
+                return DeadEnemyShieldSlices;
         }
         return null;
     }
