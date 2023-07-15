@@ -95,9 +95,13 @@ public class WaveManager : MonoBehaviour
             }
         }
     }
-    public float getWaveCoolDown()
+    public float getRemainingWaveCoolDown()
     {
         return remainingTime;
+    }
+    public float getWaveCoolDown()
+    {
+        return waveCoolDown;
     }
     public int getWave()
     {

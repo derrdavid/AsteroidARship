@@ -28,13 +28,17 @@ public class UIController : MonoBehaviour
         coordinatesText2.text = (Mathf.Round(Time.realtimeSinceStartup)).ToString();
         waveCountText.text = waveManager.getWave().ToString();
         killCountText.text = shootingscript.getKills().ToString();
-        waveCoolDownText.text = waveManager.getWaveCoolDown().ToString();
+        waveCoolDownText.text = waveManager.getRemainingWaveCoolDown().ToString();
         shootingscript.triggerShot(isShootButtonClicked);
         isShootButtonClicked = false;
     }
     private void shootButtonClicked()
     {
         isShootButtonClicked = true;
+        GameObject.Find("Managers").GetComponent<SoundManager>().oneShotLaser();
     }
-
+    public bool getShootButtonClicked()
+    {
+        return isShootButtonClicked;
+    }
 }
