@@ -16,6 +16,7 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private AudioSource killAudioSource;
     [SerializeField] private AudioClip killSound;
     [SerializeField] private AudioClip laserSound;
+    [SerializeField] private AudioClip airshipSound;
     [SerializeField] private float fadeTime = 5f;
     private AudioClip actualPlaying;
     private bool fadedIn;
@@ -35,7 +36,9 @@ public class SoundManager : MonoBehaviour
                     updateSoundtrack();
                 }
 */
-        if (waveManager.getRemainingWaveCoolDown() == 0 && fadedIn == false)
+        if (waveManager.getRemainingWaveCoolDown() == 0
+        && waveManager.getWave() != 0
+        && fadedIn == false)
         {
             waveAudioSource.Play();
             StartCoroutine(FadeInRoutine(cameraAudioSource));
@@ -89,6 +92,11 @@ public class SoundManager : MonoBehaviour
     public void oneShotKillSound()
     {
         killAudioSource.PlayOneShot(killSound);
+
+    }
+    public void oneShotAirshipSound()
+    {
+        killAudioSource.PlayOneShot(airshipSound);
 
     }
 }
