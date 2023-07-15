@@ -22,11 +22,17 @@ public class Projectile : MonoBehaviour
     private bool crashed;
     private bool invincible = true;
 
+    // sound Attributes
+    [SerializeField] private AudioSource projectileAudioSource;
+    [SerializeField] private AudioClip explosionSound;
+
     // setzen der Ausgangsposition
     void Start()
     {
         setHealth(health);
         gameObject.transform.position = new Vector3(xPosition, gameObject.transform.position.y, gameObject.transform.position.z);
+
+        projectileAudioSource.pitch = ClampToRange(moveSpeed);
     }
 
     // Bewege gameObject in z-Achse
@@ -115,6 +121,8 @@ public class Projectile : MonoBehaviour
 
             if (health <= 0)
             {
+                projectileAudioSource.Stop();
+                projectileAudioSource.PlayOneShot(explosionSound);
                 if (childAmount == 0)
                 {
                     Instantiate(deathDouble, transform.position, Quaternion.identity);
@@ -168,6 +176,8 @@ public class Projectile : MonoBehaviour
     private IEnumerator crash()
     {
         crashed = true;
+        projectileAudioSource.Stop();
+        projectileAudioSource.PlayOneShot(explosionSound);
 
         GameObject.Find("Managers").GetComponent<AtriumManager>().takeDamage(10);
         explosionParticle.Play();
@@ -179,5 +189,26 @@ public class Projectile : MonoBehaviour
             */
         yield return new WaitForSeconds(3f);
         Destroy(gameObject);
+    }
+    private float ClampToRange(float value)
+    {
+        // Division durch 6 und Anwendung des Modulo-Operators
+        float result = (value / 6.0f) % 2.0f;
+
+        // Skalierung des Ergebnisses auf den gewünschten Bereich
+        result = result * 3.0f - 3.0f;
+
+        // Überprüfen, ob das Ergebnis außerhalb des Bereichs liegt und Anpassung vornehmen
+        if (result > 3.0f)
+        {
+            result -= 6.0f;
+        }
+        else if (result < -3.0f)
+        {
+            result += 6.0f;
+        }
+
+        // Das Ergebnis liegt nun immer zwischen -3 und 3
+        return result;
     }
 }

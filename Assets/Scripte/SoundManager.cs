@@ -13,6 +13,8 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private UIController uiController;
     [SerializeField] private AudioSource waveAudioSource;
     [SerializeField] private AudioSource laserAudioSource;
+    [SerializeField] private AudioSource killAudioSource;
+    [SerializeField] private AudioClip killSound;
     [SerializeField] private AudioClip laserSound;
     [SerializeField] private float fadeTime = 5f;
     private AudioClip actualPlaying;
@@ -83,5 +85,10 @@ public class SoundManager : MonoBehaviour
             laserAudioSource.Stop();
         }
         laserAudioSource.PlayOneShot(laserSound);
+    }
+    public void oneShotKillSound()
+    {
+        killAudioSource.PlayOneShot(killSound);
+
     }
 }
