@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44402242, g: 0.49316543, b: 0.5722324, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -564,9 +564,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53fd4560576144c5b98c92fcc5f52e1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  barTextField: {fileID: 0}
   forgroundBar: {fileID: 2112557879}
-  barText: Health
 --- !u!1 &476701412
 GameObject:
   m_ObjectHideFlags: 0
@@ -2000,7 +1998,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d96c43d68370bd4a8a98d92adc38bab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBarSlider: {fileID: 1813586309}
   coordinatesText: {fileID: 1590344516}
   coordinatesText2: {fileID: 450970915}
   waveManager: {fileID: 1099087855}
@@ -2197,7 +2194,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  healthBar: {fileID: 1192736295}
   barController: {fileID: 474137512}
 --- !u!4 &1489785450
 Transform:
@@ -3095,11 +3091,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c347106b66357e34f99e18a97970a4a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deadEnemy1:
+  DeadEnemyUfo:
   - {fileID: 3483663136166093168, guid: bbbd0ea6d3bfac44ab77bf338c95ee68, type: 3}
-  - {fileID: 6719601240092127392, guid: b3798763f9e32cc44a17100d1b962f62, type: 3}
-  - {fileID: 3604304018039248367, guid: 9ab859da9dcfaeb4fa7b9893f98e8070, type: 3}
   - {fileID: 4956879745028560164, guid: f67d41bc29254674aac37d1e0d72e008, type: 3}
+  - {fileID: 3604304018039248367, guid: 9ab859da9dcfaeb4fa7b9893f98e8070, type: 3}
+  - {fileID: 6719601240092127392, guid: b3798763f9e32cc44a17100d1b962f62, type: 3}
+  DeadEnemyAsteroid:
+  - {fileID: 3005760851026511587, guid: 837ed9e8bc5a8124f8ef5760a7dc9d47, type: 3}
+  DeadEnemyShield: []
   sliceIterations: 4
 --- !u!4 &2140427565
 Transform:

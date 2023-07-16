@@ -5,12 +5,13 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     // standard Attributes
+    [Header("Standart")]
     [SerializeField] private float health = 10f;
     [SerializeField] private float moveSpeed;
     [SerializeField] private float xPosition;
     private float targetZ = 1;
     [SerializeField] private GameObject deathDouble;
-
+    [Header("Advanced")]
     // advanced Attributes
     [SerializeField] private bool rotate;
     [SerializeField] private bool angle;

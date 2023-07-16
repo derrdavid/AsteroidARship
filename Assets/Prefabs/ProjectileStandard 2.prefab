@@ -115,8 +115,7 @@ MonoBehaviour:
   health: 10
   moveSpeed: 2
   xPosition: 0
-  targetZ: -17
-  deathDouble: {fileID: 8929082375700027164, guid: 5c3e7267b6e4f9d4ca1b8315e863f245, type: 3}
+  deathDouble: {fileID: 8929082375700027164, guid: 707b54c2d0e578647a7ed047fb7030f7, type: 3}
   rotate: 0
   angle: 0
   allowedSides: 

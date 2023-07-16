@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3943418596268101927}
   - component: {fileID: 6283508139571984020}
   m_Layer: 0
-  m_Name: DeadEnemy
+  m_Name: DeadEnemy assteroid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -129,4 +129,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravity: 0
   explosionForce: 3
-  type: 0
+  type: 1

@@ -31,6 +31,7 @@ public class SlicesStart : MonoBehaviour
             DeadEnemyUfoSlices = sliceObj(DeadEnemyUfo, sliceIterations);
         if (DeadEnemyAsteroid != null)
             DeadEnemyAsteroidSlices = sliceObj(DeadEnemyAsteroid, sliceIterations);
+            print("asteroid geschnitten");
         if (DeadEnemyShield != null)
             DeadEnemyShieldSlices = sliceObj(DeadEnemyShield, sliceIterations);
     }
