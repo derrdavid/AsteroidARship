@@ -38,6 +38,7 @@ public class WaveManager : MonoBehaviour
     private int actualWave = 0;
     [SerializeField] private float waveCoolDown = 15f;
     private float remainingTime;
+    private bool paused;
     [SerializeField] private Shootingscript shootingscript;
     [SerializeField] private Wave[] waves;
 
@@ -53,7 +54,6 @@ public class WaveManager : MonoBehaviour
     {
         if (actualWave >= 1)
         {
-
             score = shootingscript.kills;
             switch (score)
             {
@@ -65,6 +65,14 @@ public class WaveManager : MonoBehaviour
                     break;
 
             }
+        }
+        if (remainingTime > 0)
+        {
+            paused = true;
+        }
+        else
+        {
+            paused = false;
         }
     }
     private IEnumerator increaseWave()
@@ -106,5 +114,9 @@ public class WaveManager : MonoBehaviour
     public int getWave()
     {
         return actualWave;
+    }
+    public bool getPaused()
+    {
+        return paused;
     }
 }
