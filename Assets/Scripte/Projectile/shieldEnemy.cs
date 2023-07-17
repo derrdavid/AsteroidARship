@@ -10,7 +10,7 @@ public class shieldEnemy : MonoBehaviour
     [SerializeField]
     private GameObject deathDouble;
     [SerializeField]
-    private float lives = 10;
+    private float health = 10;
     private GameObject shield;
     private float leftBound;
     // Start is called before the first frame update
@@ -26,12 +26,12 @@ public class shieldEnemy : MonoBehaviour
         {
             leftBound = -0.3f;
         }
-        shield = Instantiate(shieldPrefab,transform.position + new Vector3(leftBound, 0, 0), Quaternion.identity);
+        shield = Instantiate(shieldPrefab, transform.position + new Vector3(leftBound, 0, 0), Quaternion.identity);
     }
     public void getDamadge(float damadge)
     {
-        lives -= damadge;
-        if (lives <= 0)
+        health -= damadge;
+        if (health <= 0)
         {
             die();
         }

@@ -101,10 +101,11 @@ public class Shootingscript : MonoBehaviour
         if (Physics.Raycast(mainCamera.transform.position, mainCamera.transform.forward, out RaycastHit hit, 100, enemys, QueryTriggerInteraction.UseGlobal))
         {
             //print(hit.collider.gameObject.name);
-            if (hit.collider.GetComponent<Projectile>() == null || !hit.collider.GetComponent<Projectile>().getInvincible())
+            if ((hit.collider?.GetComponent<Projectile>() != null && !hit.collider.GetComponent<Projectile>().getInvincible()) && hit.collider?.GetComponent<shieldEnemy>())
             {
                 shoot(hit.point);
             }
+
             if (hit.collider.tag == "Enemy")
             {
                 Destroy(Instantiate(explos, hit.point, Quaternion.identity), 0.3f);

@@ -400,7 +400,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shieldPrefab: {fileID: 791124356483469329, guid: e2fcae679498be347ae0da6d37a0dc71, type: 3}
   deathDouble: {fileID: 8929082375700027164, guid: 1f5718c72997ebf478e356ac506b85f2, type: 3}
-  lives: 10
+  health: 100
 --- !u!135 &7063900316472253250
 SphereCollider:
   m_ObjectHideFlags: 0
