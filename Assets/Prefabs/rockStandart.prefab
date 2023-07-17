@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 1536449475215184892}
   - component: {fileID: 3654222366602012470}
   - component: {fileID: 3657682644768196410}
-  - component: {fileID: 3887856314291060184}
-  - component: {fileID: -6786922511256085826}
+  - component: {fileID: 2496856437657310127}
+  - component: {fileID: -2369453870773882070}
   m_Layer: 0
   m_Name: rockStandart
   m_TagString: Enemy
@@ -96,11 +96,12 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 1
-  m_Height: 5
+
+  m_Radius: 0.5
+  m_Height: 0.3
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3887856314291060184
+--- !u!114 &2496856437657310127
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -117,7 +118,7 @@ MonoBehaviour:
   _useGravity: 0
   _shareVertices: 0
   _smoothVertices: 0
---- !u!114 &-6786922511256085826
+--- !u!114 &-2369453870773882070
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
