@@ -1380,6 +1380,7 @@ MonoBehaviour:
   firePoint: {fileID: 476701412}
   firePoint2: {fileID: 1889480720}
   defaultTarget: {fileID: 2081257226}
+  explos: {fileID: 8341338251610645304, guid: fb3dfc7999ad8f645bb6ff5994b14908, type: 3}
 --- !u!82 &804101581
 AudioSource:
   m_ObjectHideFlags: 0
