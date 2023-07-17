@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44402242, g: 0.49316543, b: 0.5722324, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1773,7 +1773,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d8c6325896a74e43837a65cedf42ada, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 8929082375700027164, guid: dac01c5d92cf0d7439704f60330c0799, type: 3}
+  prefab: {fileID: 3005760851026511587, guid: 692ac8e8221225d4dbea525ec642d8ad, type: 3}
   randomSpawnInterval: {x: 0, y: 0}
   randomYInterval: {x: 0, y: 0}
   maxObjects: 10
@@ -3601,7 +3601,7 @@ GameObject:
   m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!65 &2028631505
 BoxCollider:
@@ -3917,9 +3917,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c347106b66357e34f99e18a97970a4a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DeadEnemyUfo: []
-  DeadEnemyAsteroid: []
-  DeadEnemyShield: []
+  DeadEnemyUfo:
+  - {fileID: 3483663136166093168, guid: bbbd0ea6d3bfac44ab77bf338c95ee68, type: 3}
+  - {fileID: 6719601240092127392, guid: b3798763f9e32cc44a17100d1b962f62, type: 3}
+  - {fileID: 4956879745028560164, guid: f67d41bc29254674aac37d1e0d72e008, type: 3}
+  - {fileID: 3604304018039248367, guid: 9ab859da9dcfaeb4fa7b9893f98e8070, type: 3}
+  DeadEnemyAsteroid:
+  - {fileID: 3005760851026511587, guid: 837ed9e8bc5a8124f8ef5760a7dc9d47, type: 3}
+  DeadEnemyShield:
+  - {fileID: 3516929234094549829, guid: ee9f2133a2941f24bbeb50aecd019104, type: 3}
+  - {fileID: 8878636036951484229, guid: 22475f9df9d8f764484c9ed04c2d3214, type: 3}
   sliceIterations: 4
 --- !u!4 &2140427565
 Transform:

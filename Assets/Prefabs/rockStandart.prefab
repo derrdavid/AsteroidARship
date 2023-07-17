@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 3654222366602012470}
   - component: {fileID: 3657682644768196410}
   - component: {fileID: 3887856314291060184}
+  - component: {fileID: -6786922511256085826}
   m_Layer: 0
   m_Name: rockStandart
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -116,3 +117,27 @@ MonoBehaviour:
   _useGravity: 0
   _shareVertices: 0
   _smoothVertices: 0
+--- !u!114 &-6786922511256085826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3005760851026511587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b902c335f5b43de4faa85e7158d38c75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 10
+  moveSpeed: 2
+  xPosition: 0
+  deathDouble: {fileID: 8929082375700027164, guid: 9ccd20faea4111a42bd9d4b891f59783, type: 3}
+  rotate: 1
+  angle: 0
+  allowedSides: 
+  childAmount: 0
+  child: {fileID: 8929082375700027164, guid: dac01c5d92cf0d7439704f60330c0799, type: 3}
+  explosionParticle: {fileID: 4902223185319783021, guid: dac01c5d92cf0d7439704f60330c0799, type: 3}
+  projectileAudioSource: {fileID: 6018029825452874832, guid: dac01c5d92cf0d7439704f60330c0799, type: 3}
+  explosionSound: {fileID: 8300000, guid: cb0133a8499970c43b60dd4b4739c340, type: 3}
