@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Device;
 using UnityEngine.InputSystem.HID;
@@ -37,6 +38,8 @@ public class Shootingscript : MonoBehaviour
     private GameObject firePoint2;
     [SerializeField]
     private GameObject defaultTarget;
+    [SerializeField]
+    private GameObject explos;
 
     private bool shotFired = false;
     private Vector3 shotTarget;
@@ -101,12 +104,20 @@ public class Shootingscript : MonoBehaviour
             shoot(hit.point);
             if (hit.collider.tag == "Enemy")
             {
-                if (hit.collider.GetComponent<Projectile>().getHealth() - damage <= 0 && !hit.collider.GetComponent<Projectile>().getInvincible())
+                Destroy(Instantiate(explos, hit.point, Quaternion.identity), 0.3f);
+                if (hit.collider.GetComponent<Projectile>() != null)
                 {
-                    GameObject.Find("Managers").GetComponent<SoundManager>().oneShotKillSound();
-                    kills++;
+                    if (hit.collider.GetComponent<Projectile>().getHealth() - damage <= 0 && !hit.collider.GetComponent<Projectile>().getInvincible())
+                    {
+                        GameObject.Find("Managers").GetComponent<SoundManager>().oneShotKillSound();
+                        kills++;
+                    }
+                    hit.collider.GetComponent<Projectile>().getHit(hit.point, damage);
                 }
-                hit.collider.GetComponent<Projectile>().getHit(hit.point, damage);
+                if (hit.collider.GetComponent<shieldEnemy>() != null)
+                {
+                    hit.collider.GetComponent<shieldEnemy>().getDamadge(damage);    
+                }
                 animator.SetBool("targeted", true);
             }
         }

@@ -1718,6 +1718,7 @@ GameObject:
   - component: {fileID: 899391292}
   - component: {fileID: 899391293}
   - component: {fileID: 899391294}
+  - component: {fileID: 899391295}
   m_Layer: 0
   m_Name: ProjectileOrigin
   m_TagString: Untagged
@@ -1782,6 +1783,24 @@ MonoBehaviour:
   targetZ: 1
   floatingIntensityX: {x: 0, y: 0}
   floatingIntensityY: {x: 0, y: 0}
+--- !u!114 &899391295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 899391290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7623c2bb3e8d4241a2e350ffebfd58c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wavManager: {fileID: 1060850794}
+  objectToSpawn: {fileID: 6944551200457537829, guid: c42ff1fc8ab28b44d969ebfe11babfd9, type: 3}
+  averageSpawnTime: 10
+  firstApearance: 1
+  maxNumber: 2
+  currentNumber: 0
 --- !u!4 &998479575 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5749892945899594867, guid: 797ee248261f4504f9071cdf2c4300d4, type: 3}
@@ -1824,15 +1843,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
-  waveCoolDown: 30
+  waveCoolDown: 10
   shootingscript: {fileID: 804101580}
   waves:
   - _waveNumber: 1
-    _scoreGoal: 1
+    _scoreGoal: 10
     projectileSpawners:
     - {fileID: 899391293}
   - _waveNumber: 2
-    _scoreGoal: 10
+    _scoreGoal: 20
     projectileSpawners:
     - {fileID: 899391294}
 --- !u!114 &1060850795
@@ -3097,6 +3116,66 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1590344514}
   m_CullTransparentMesh: 1
+--- !u!1 &1664515774
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1664515777}
+  - component: {fileID: 1664515776}
+  - component: {fileID: 1664515775}
+  m_Layer: 0
+  m_Name: VisualScripting SceneVariables
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1664515775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1664515774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 765181c9ef4b24d32a4f7cbd2ef370dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1664515776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1664515774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e741851cba3ad425c91ecf922cc6b379, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _data:
+    _json: '{"declarations":{"Kind":"Scene","collection":{"$content":[],"$version":"A"},"$version":"A"}}'
+    _objectReferences: []
+--- !u!4 &1664515777
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1664515774}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1866225473
 GameObject:
   m_ObjectHideFlags: 0
