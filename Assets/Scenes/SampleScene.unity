@@ -2445,7 +2445,7 @@ MonoBehaviour:
   defaultTarget: {fileID: 2081257226}
   explos: {fileID: 8341338251610645304, guid: fb3dfc7999ad8f645bb6ff5994b14908, type: 3}
   doubleXP: 0
-  multishot: 1
+  multishot: 0
   rapidfire: 0
 --- !u!82 &804101581
 AudioSource:
