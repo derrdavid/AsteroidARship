@@ -2898,7 +2898,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
-  waveCoolDown: 1
+  waveCoolDown: 30
   shootingscript: {fileID: 804101580}
   terminalscript: {fileID: 919132148101292283}
   waves:
