@@ -3,7 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using TMPro;
+using UnityEngine.SceneManagement;
 public class AtriumManager : MonoBehaviour
 {
     public int maxHealth = 100;
@@ -11,6 +12,10 @@ public class AtriumManager : MonoBehaviour
     [SerializeField] private BarController barController;
     [SerializeField] private Image interfaceImage;
     [SerializeField] private Button shootButton;
+    [SerializeField] private TextMeshProUGUI[] placeTexts;
+    [SerializeField] private Canvas scoreBoard;
+    [SerializeField] private TextMeshProUGUI restartText;
+    [SerializeField] private TextMeshProUGUI restartCountdown;
 
     [Header("colorize")]
     private float lerpSpeed = 0.5f;
@@ -32,9 +37,11 @@ public class AtriumManager : MonoBehaviour
     {
         if (barController.getCurrentHealth() <= 0 && !deathScreen)
         {
+            scoreBoard.gameObject.SetActive(true);
             t += Time.deltaTime * lerpSpeed;
             interfaceImage.color = Color.Lerp(startColor, Color.red, t);
             shootButton.image.color = Color.Lerp(startColor, Color.black, t);
+            scoreBoard.GetComponent<Image>().color = Color.Lerp(startColor, Color.white, t);
 
             // Überprüfe, ob der Color-Lerp abgeschlossen ist
             if (t >= 1f)
@@ -49,9 +56,23 @@ public class AtriumManager : MonoBehaviour
         deathScreen = true;
         shootButton.enabled = false;
         yield return new WaitForSeconds(4f);
-
         UpdateHighscores();
         DisplayHighscores();
+        StartCoroutine(Restart());
+    }
+    IEnumerator Restart()
+    {
+        restartText.gameObject.SetActive(true);
+        int countdownSeconds = 10;
+
+        while (countdownSeconds > 0)
+        {
+            restartCountdown.text = countdownSeconds.ToString();
+            yield return new WaitForSeconds(1f);
+            countdownSeconds--;
+        }
+
+        SceneManager.LoadScene("IntroScene"); // Hier den Namen der IntroScene einfügen
     }
 
     public void takeDamage(int damage)
@@ -82,8 +103,8 @@ public class AtriumManager : MonoBehaviour
 
     private void UpdateHighscores()
     {
-        //myScore = waveManager.score;
-        myScore = 19990;
+        myScore = waveManager.score;
+
 
         for (int i = 0; i < highscores.Count; i++)
         {
@@ -103,17 +124,15 @@ public class AtriumManager : MonoBehaviour
 
     private void DisplayHighscores()
     {
-        Debug.Log(highscores);
-        Debug.Log("Highscores:");
         for (int i = 0; i < highscores.Count; i++)
         {
-            if (i < highscores.Count && highscores[i] > 0)
+            if (i < highscores.Count && highscores[i] >= 0)
             {
-                Debug.Log((i + 1) + ". " + highscores[i]);
+                placeTexts[i].text = highscores[i].ToString();
             }
             else
             {
-                Debug.Log((i + 1) + ". -");
+                placeTexts[i].text = "-";
             }
         }
     }
