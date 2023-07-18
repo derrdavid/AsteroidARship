@@ -30,12 +30,12 @@ public class SoundManager : MonoBehaviour
     private void Update()
     {
 
-        /**
-                if (cameraAudioSource.time >= actualPlaying.length)
-                {
-                    updateSoundtrack();
-                }
-*/
+
+        if (cameraAudioSource.time >= actualPlaying.length)
+        {
+            updateSoundtrack();
+        }
+
         if (waveManager.getRemainingWaveCoolDown() == 0
         && waveManager.getWave() != 0
         && fadedIn == false)

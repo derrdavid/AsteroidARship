@@ -11,6 +11,7 @@ public class ProjectileSpawner : MonoBehaviour
     [SerializeField][MinMaxSlider(-5.0f, 5.0f)] private Vector2 randomYInterval;
     [SerializeField][Range(0, 20)] private int maxObjects;
     [SerializeField][Range(0, 20)] private float moveSpeed;
+    [SerializeField][MinMaxSlider(0.1f, 3)] private Vector2 size;
     [SerializeField] private float startSpeed = 5f;
     [SerializeField] private float targetZ = 1;
     [SerializeField][MinMaxSlider(-10, 10)] private Vector2 floatingIntensityX;
@@ -18,6 +19,8 @@ public class ProjectileSpawner : MonoBehaviour
     private float timer = 0f;
     private List<GameObject> livingEnemies = new List<GameObject>();
     private bool active;
+
+    [System.Obsolete]
     private void Update()
     {
         if (active)
@@ -42,6 +45,9 @@ public class ProjectileSpawner : MonoBehaviour
 
                     Vector3 endPosition = new Vector3(transform.position.x + randomX, transform.position.y + randomY, transform.position.z);
                     GameObject newObject = Instantiate(prefab, new Vector3(endPosition.x, endPosition.y + randomY, endPosition.z + randomZ), Quaternion.identity);
+
+                    float randomScale = Random.RandomRange(size.x, size.y);
+                    newObject.transform.localScale = new Vector3(randomScale, randomScale, randomScale);
 
                     Projectile projectileMove = newObject.GetComponent<Projectile>();
                     livingEnemies.Add(newObject);

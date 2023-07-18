@@ -7,8 +7,8 @@ public class Projectile : MonoBehaviour
     // standard Attributes
     [Header("Standart")]
     [SerializeField] private float health = 10f;
-    [SerializeField] private float moveSpeed;
-    [SerializeField] private float xPosition;
+    private float moveSpeed;
+    private float xPosition;
     private float targetZ = 1;
     [SerializeField] private GameObject deathDouble;
     [Header("Advanced")]
@@ -22,6 +22,10 @@ public class Projectile : MonoBehaviour
     [SerializeField] private ParticleSystem explosionParticle;
     private bool crashed;
     private bool invincible = true;
+    private float rotateX;
+    private float rotateY;
+    private float rotateZ;
+    private float rotateTime;
 
     // sound Attributes
     [SerializeField] private AudioSource projectileAudioSource;
@@ -34,6 +38,10 @@ public class Projectile : MonoBehaviour
         gameObject.transform.position = new Vector3(xPosition, gameObject.transform.position.y, gameObject.transform.position.z);
 
         projectileAudioSource.pitch = ClampToRange(moveSpeed);
+        rotateX = Random.Range(0, 100);
+        rotateY = Random.Range(0, 100);
+        rotateZ = Random.Range(0, 100);
+        rotateTime = Random.Range(0, 360);
     }
 
     // Bewege gameObject in z-Achse
@@ -44,7 +52,8 @@ public class Projectile : MonoBehaviour
 
         if (rotate)
         {
-            iTween.RotateBy(gameObject, new Vector3(0, 100, 30), 600);
+
+            iTween.RotateBy(gameObject, new Vector3(rotateX, rotateY, rotateZ), rotateTime);
         }
         if (gameObject.transform.position.z <= targetZ && crashed == false)
         {

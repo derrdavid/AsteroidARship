@@ -11,10 +11,8 @@ public class ShieldBearer : MonoBehaviour
     [SerializeField]
     private float averageSpawnTime;
     [SerializeField]
-    private int firstApearance;
-    [SerializeField]
     private int maxNumber;
-
+    [SerializeField] private List<int> waveOccurence;
     private List<GameObject> objects;
     [SerializeField]
     private int currentNumber;
@@ -28,17 +26,17 @@ public class ShieldBearer : MonoBehaviour
         currentNumber = 0;
         currentWave = 0;
         timer = 0f;
-        actualSpawnTime = averageSpawnTime + Random.Range(-3,3);
+        actualSpawnTime = averageSpawnTime + Random.Range(-3, 3);
     }
 
     // Update is called once per frame
     void Update()
     {
-        foreach (GameObject e in objects)
+        for (int i = objects.Count - 1; i >= 0; i--)
         {
-            if (e == null)
+            if (objects[i] == null)
             {
-                objects.Remove(e);
+                objects.RemoveAt(i);
                 currentNumber--;
             }
         }
@@ -51,7 +49,7 @@ public class ShieldBearer : MonoBehaviour
         {
             actualSpawnTime = averageSpawnTime + Random.Range(-3, 3);
             timer = 0f;
-            if (currentWave >= firstApearance && currentNumber < maxNumber)
+            if (waveOccurence.Contains(currentWave) && currentNumber < maxNumber)
             {
                 spawnShieldBearer();
                 currentNumber++;
@@ -65,11 +63,11 @@ public class ShieldBearer : MonoBehaviour
     private Vector3 randomSpawnLocation()
     {
         int side = Random.Range(0, 2) * 2 - 1;
-        float x = Random.Range(2,4);
+        float x = Random.Range(2, 4);
         x = x * side;
         float y = 2;
         float z = 20;
-        return new Vector3(x,y,z);
+        return new Vector3(x, y, z);
     }
     private void updateWave()
     {

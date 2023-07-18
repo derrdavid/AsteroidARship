@@ -31,13 +31,13 @@ Material:
     m_Floats:
     - _BUILTIN_QueueControl: 0
     - _BUILTIN_QueueOffset: 0
-    - _NormalColorInfluence: 0.635
+    - _NormalColorInfluence: 1
     - _metallic_strength: 1.85
     - _normalStranggth: 1.1
     - _normalStrength: 1.46
-    - _smoothness: 0.045
+    - _smoothness: 1
     m_Colors:
-    - _rockColor: {r: 0.1270915, g: 0.19661799, b: 0.2264151, a: 0}
+    - _rockColor: {r: 0.024867712, g: 0.019624421, b: 0.1981132, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &6950436224910701996
 MonoBehaviour:
