@@ -8,6 +8,7 @@ public enum DEAD_ENEMY_TYPE
     UFO,
     ASTEROID,
     SHIELDBEARER,
+    UFOMID,
 }
 public class SlicesStart : MonoBehaviour
 {
@@ -15,12 +16,15 @@ public class SlicesStart : MonoBehaviour
     [SerializeField]
     private List<GameObject> DeadEnemyUfo;
     [SerializeField]
+    private List<GameObject> DeadEnemyMidUfo;
+    [SerializeField]
     private List<GameObject> DeadEnemyAsteroid;
     [SerializeField]
     private List<GameObject> DeadEnemyShield;
     [SerializeField]
     private int sliceIterations;
 
+    private ArrayList DeadEnemyMidUfoSlices;
     private ArrayList DeadEnemyUfoSlices;
     private ArrayList DeadEnemyAsteroidSlices;
     private ArrayList DeadEnemyShieldSlices;
@@ -29,6 +33,8 @@ public class SlicesStart : MonoBehaviour
     {
         if (DeadEnemyUfo != null)
             DeadEnemyUfoSlices = sliceObj(DeadEnemyUfo, sliceIterations);
+        if (DeadEnemyMidUfo != null)
+            DeadEnemyMidUfoSlices = sliceObj(DeadEnemyMidUfo, sliceIterations);
         if (DeadEnemyAsteroid != null)
             DeadEnemyAsteroidSlices = sliceObj(DeadEnemyAsteroid, sliceIterations);
         if (DeadEnemyShield != null)
@@ -100,13 +106,16 @@ public class SlicesStart : MonoBehaviour
     }
     public ArrayList getDeadEnemy(DEAD_ENEMY_TYPE type)
     {
-        switch ((int)type){
+        switch ((int)type)
+        {
             case 0:
                 return DeadEnemyUfoSlices;
             case 1:
                 return DeadEnemyAsteroidSlices;
             case 2:
                 return DeadEnemyShieldSlices;
+            case 3:
+                return DeadEnemyMidUfoSlices;
         }
         return null;
     }

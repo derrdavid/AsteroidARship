@@ -11,10 +11,8 @@ public class ShieldBearer : MonoBehaviour
     [SerializeField]
     private float averageSpawnTime;
     [SerializeField]
-    private int firstApearance;
-    [SerializeField]
     private int maxNumber;
-
+    [SerializeField] private List<int> waveOccurence;
     private List<GameObject> objects;
     [SerializeField]
     private int currentNumber;
@@ -51,7 +49,7 @@ public class ShieldBearer : MonoBehaviour
         {
             actualSpawnTime = averageSpawnTime + Random.Range(-3, 3);
             timer = 0f;
-            if (currentWave >= firstApearance && currentNumber < maxNumber)
+            if (waveOccurence.Contains(currentWave) && currentNumber < maxNumber)
             {
                 spawnShieldBearer();
                 currentNumber++;
