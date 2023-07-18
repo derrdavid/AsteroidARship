@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -2369453870773882070}
   - component: {fileID: 2675552682029939857}
   m_Layer: 0
-  m_Name: rockStandart
+  m_Name: rockMId
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -67,7 +67,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 72f7fa4a35f1d5f4fbc7676e0871b68f, type: 2}
+  - {fileID: 2100000, guid: 804b8f4bc83e68d4fb8911501716e816, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -132,7 +132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b902c335f5b43de4faa85e7158d38c75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 50
   deathDouble: {fileID: 8929082375700027164, guid: 9ccd20faea4111a42bd9d4b891f59783, type: 3}
   rotate: 1
   angle: 0
@@ -461,7 +461,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
+      maxColor: {r: 0.6421795, g: 1, b: 0, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}

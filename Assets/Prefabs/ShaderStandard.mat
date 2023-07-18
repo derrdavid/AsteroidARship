@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Shader Graphs_rockShader
+  m_Name: ShaderStandard
   m_Shader: {fileID: -6465566751694194690, guid: 4ff05d51f71d60740b3d5cc580b286e3, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -31,13 +31,13 @@ Material:
     m_Floats:
     - _BUILTIN_QueueControl: 0
     - _BUILTIN_QueueOffset: 0
-    - _NormalColorInfluence: 1
+    - _NormalColorInfluence: 0.374
     - _metallic_strength: 1.85
     - _normalStranggth: 1.1
     - _normalStrength: 1.46
-    - _smoothness: 1
+    - _smoothness: 0.069
     m_Colors:
-    - _rockColor: {r: 0.024867712, g: 0.019624421, b: 0.1981132, a: 0}
+    - _rockColor: {r: 0.3490566, g: 0.3490566, b: 0.3490566, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &6950436224910701996
 MonoBehaviour:

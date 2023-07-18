@@ -385,6 +385,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 116921457}
+  - component: {fileID: 116921461}
+  - component: {fileID: 116921460}
+  - component: {fileID: 116921459}
+  - component: {fileID: 116921458}
   m_Layer: 0
   m_Name: Wave8
   m_TagString: Untagged
@@ -407,6 +411,94 @@ Transform:
   m_Father: {fileID: 702391552}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &116921458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 116921456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d8c6325896a74e43837a65cedf42ada, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 1196303534189875630, guid: 21391a28eb457ed459169065b2254520, type: 3}
+  randomSpawnInterval: {x: 20, y: 20}
+  randomYInterval: {x: -5, y: 5}
+  maxObjects: 4
+  moveSpeed: 12
+  size: {x: 1, y: 2}
+  startSpeed: 8
+  targetZ: 1
+  floatingIntensityX: {x: -3, y: 3}
+  floatingIntensityY: {x: -3, y: 3}
+--- !u!114 &116921459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 116921456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d8c6325896a74e43837a65cedf42ada, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 3005760851026511587, guid: efcab936391126d4686c280f038b2164, type: 3}
+  randomSpawnInterval: {x: 5, y: 20}
+  randomYInterval: {x: -2, y: 2}
+  maxObjects: 2
+  moveSpeed: 3
+  size: {x: 1, y: 3}
+  startSpeed: 5
+  targetZ: 1
+  floatingIntensityX: {x: -1, y: 1}
+  floatingIntensityY: {x: -2, y: 2}
+--- !u!114 &116921460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 116921456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d8c6325896a74e43837a65cedf42ada, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 3005760851026511587, guid: 1576661ab4c70904fb21fb0fb6f938e5, type: 3}
+  randomSpawnInterval: {x: 15, y: 20}
+  randomYInterval: {x: -3, y: 3}
+  maxObjects: 2
+  moveSpeed: 1
+  size: {x: 1, y: 3}
+  startSpeed: 5
+  targetZ: 1
+  floatingIntensityX: {x: -1, y: 1}
+  floatingIntensityY: {x: -1, y: 1}
+--- !u!114 &116921461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 116921456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d8c6325896a74e43837a65cedf42ada, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 1196303534189875630, guid: ffd1e697d533b6842be5ae702f3ee168, type: 3}
+  randomSpawnInterval: {x: 2, y: 20}
+  randomYInterval: {x: -3, y: 5}
+  maxObjects: 2
+  moveSpeed: 6
+  size: {x: 1, y: 2}
+  startSpeed: 8
+  targetZ: 1
+  floatingIntensityX: {x: -3, y: 3}
+  floatingIntensityY: {x: -3, y: 3}
 --- !u!1001 &132628419
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1103,6 +1195,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 542331140}
+  - component: {fileID: 542331142}
+  - component: {fileID: 542331141}
   m_Layer: 0
   m_Name: Wave9
   m_TagString: Untagged
@@ -1125,6 +1219,50 @@ Transform:
   m_Father: {fileID: 702391552}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &542331141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 542331139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d8c6325896a74e43837a65cedf42ada, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 1196303534189875630, guid: 21391a28eb457ed459169065b2254520, type: 3}
+  randomSpawnInterval: {x: 2, y: 20}
+  randomYInterval: {x: -5, y: 5}
+  maxObjects: 6
+  moveSpeed: 12
+  size: {x: 1, y: 2}
+  startSpeed: 8
+  targetZ: 1
+  floatingIntensityX: {x: -2, y: 2}
+  floatingIntensityY: {x: -1, y: 1}
+--- !u!114 &542331142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 542331139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d8c6325896a74e43837a65cedf42ada, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 3005760851026511587, guid: 1576661ab4c70904fb21fb0fb6f938e5, type: 3}
+  randomSpawnInterval: {x: 5, y: 20}
+  randomYInterval: {x: -3, y: 3}
+  maxObjects: 4
+  moveSpeed: 1
+  size: {x: 1, y: 3}
+  startSpeed: 5
+  targetZ: 1
+  floatingIntensityX: {x: -1, y: 1}
+  floatingIntensityY: {x: -1, y: 1}
 --- !u!1 &571699997
 GameObject:
   m_ObjectHideFlags: 0
@@ -1627,9 +1765,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wavManager: {fileID: 1060850794}
   objectToSpawn: {fileID: 6944551200457537829, guid: c42ff1fc8ab28b44d969ebfe11babfd9, type: 3}
-  averageSpawnTime: 10
-  firstApearance: 1
+  averageSpawnTime: 20
   maxNumber: 2
+  waveOccurence: 03000000040000000600000008000000090000000a000000
   currentNumber: 0
 --- !u!1 &705507993
 GameObject:
@@ -1734,6 +1872,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 705911128}
+  - component: {fileID: 705911130}
+  - component: {fileID: 705911129}
   m_Layer: 0
   m_Name: Wave4
   m_TagString: Untagged
@@ -1756,6 +1896,50 @@ Transform:
   m_Father: {fileID: 702391552}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &705911129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 705911127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d8c6325896a74e43837a65cedf42ada, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 3005760851026511587, guid: efcab936391126d4686c280f038b2164, type: 3}
+  randomSpawnInterval: {x: 4, y: 8}
+  randomYInterval: {x: -3, y: 3}
+  maxObjects: 5
+  moveSpeed: 2
+  size: {x: 1, y: 1.5}
+  startSpeed: 5
+  targetZ: 1
+  floatingIntensityX: {x: 0, y: 0}
+  floatingIntensityY: {x: 0, y: 0}
+--- !u!114 &705911130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 705911127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d8c6325896a74e43837a65cedf42ada, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 1196303534189875630, guid: ffd1e697d533b6842be5ae702f3ee168, type: 3}
+  randomSpawnInterval: {x: 2, y: 5}
+  randomYInterval: {x: -3, y: 3}
+  maxObjects: 3
+  moveSpeed: 5
+  size: {x: 1, y: 1}
+  startSpeed: 8
+  targetZ: 1
+  floatingIntensityX: {x: -3, y: 3}
+  floatingIntensityY: {x: -3, y: 3}
 --- !u!1 &757557179
 GameObject:
   m_ObjectHideFlags: 0
@@ -2522,17 +2706,63 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
-  waveCoolDown: 10
+  waveCoolDown: 1
   shootingscript: {fileID: 804101580}
   waves:
   - _waveNumber: 1
-    _scoreGoal: 10
+    _scoreGoal: 5
     projectileSpawners:
     - {fileID: 1797347513}
   - _waveNumber: 2
-    _scoreGoal: 20
+    _scoreGoal: 10
     projectileSpawners:
     - {fileID: 1944980197}
+  - _waveNumber: 3
+    _scoreGoal: 15
+    projectileSpawners:
+    - {fileID: 1572002013}
+  - _waveNumber: 4
+    _scoreGoal: 20
+    projectileSpawners:
+    - {fileID: 705911130}
+    - {fileID: 705911129}
+  - _waveNumber: 5
+    _scoreGoal: 30
+    projectileSpawners:
+    - {fileID: 1812892470}
+    - {fileID: 1812892469}
+  - _waveNumber: 6
+    _scoreGoal: 40
+    projectileSpawners:
+    - {fileID: 1458504617}
+    - {fileID: 1458504616}
+    - {fileID: 1458504615}
+  - _waveNumber: 7
+    _scoreGoal: 50
+    projectileSpawners:
+    - {fileID: 1111925265}
+    - {fileID: 1111925264}
+    - {fileID: 1111925263}
+    - {fileID: 1111925262}
+  - _waveNumber: 8
+    _scoreGoal: 60
+    projectileSpawners:
+    - {fileID: 116921461}
+    - {fileID: 116921460}
+    - {fileID: 116921459}
+    - {fileID: 116921458}
+  - _waveNumber: 9
+    _scoreGoal: 70
+    projectileSpawners:
+    - {fileID: 542331142}
+    - {fileID: 542331141}
+  - _waveNumber: 10
+    _scoreGoal: 80
+    projectileSpawners:
+    - {fileID: 1171926250}
+    - {fileID: 1171926249}
+    - {fileID: 1171926248}
+    - {fileID: 1171926247}
 --- !u!114 &1060850795
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2545,7 +2775,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 635a9d24a40c69741af6106ca0b492e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 0
+  maxHealth: 100
   waveManager: {fileID: 1060850794}
   barController: {fileID: 474137512}
   interfaceImage: {fileID: 1093843518}
@@ -3003,6 +3233,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1111925261}
+  - component: {fileID: 1111925265}
+  - component: {fileID: 1111925264}
+  - component: {fileID: 1111925263}
+  - component: {fileID: 1111925262}
   m_Layer: 0
   m_Name: Wave7
   m_TagString: Untagged
@@ -3025,6 +3259,94 @@ Transform:
   m_Father: {fileID: 702391552}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1111925262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1111925260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d8c6325896a74e43837a65cedf42ada, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 1196303534189875630, guid: 21391a28eb457ed459169065b2254520, type: 3}
+  randomSpawnInterval: {x: 20, y: 20}
+  randomYInterval: {x: -5, y: 5}
+  maxObjects: 1
+  moveSpeed: 12
+  size: {x: 1, y: 2}
+  startSpeed: 8
+  targetZ: 1
+  floatingIntensityX: {x: -3, y: 3}
+  floatingIntensityY: {x: -3, y: 3}
+--- !u!114 &1111925263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1111925260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d8c6325896a74e43837a65cedf42ada, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 3005760851026511587, guid: efcab936391126d4686c280f038b2164, type: 3}
+  randomSpawnInterval: {x: 5, y: 10}
+  randomYInterval: {x: -2, y: 2}
+  maxObjects: 3
+  moveSpeed: 3
+  size: {x: 1, y: 3}
+  startSpeed: 5
+  targetZ: 1
+  floatingIntensityX: {x: -1, y: 1}
+  floatingIntensityY: {x: -2, y: 2}
+--- !u!114 &1111925264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1111925260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d8c6325896a74e43837a65cedf42ada, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 3005760851026511587, guid: 1576661ab4c70904fb21fb0fb6f938e5, type: 3}
+  randomSpawnInterval: {x: 15, y: 20}
+  randomYInterval: {x: -3, y: 3}
+  maxObjects: 1
+  moveSpeed: 1
+  size: {x: 1, y: 3}
+  startSpeed: 5
+  targetZ: 1
+  floatingIntensityX: {x: -1, y: 1}
+  floatingIntensityY: {x: -1, y: 1}
+--- !u!114 &1111925265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1111925260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d8c6325896a74e43837a65cedf42ada, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 1196303534189875630, guid: ffd1e697d533b6842be5ae702f3ee168, type: 3}
+  randomSpawnInterval: {x: 2, y: 5}
+  randomYInterval: {x: -3, y: 5}
+  maxObjects: 2
+  moveSpeed: 6
+  size: {x: 1, y: 2}
+  startSpeed: 8
+  targetZ: 1
+  floatingIntensityX: {x: -3, y: 3}
+  floatingIntensityY: {x: -3, y: 3}
 --- !u!1 &1126892046
 GameObject:
   m_ObjectHideFlags: 0
@@ -3141,6 +3463,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1171926246}
+  - component: {fileID: 1171926250}
+  - component: {fileID: 1171926249}
+  - component: {fileID: 1171926248}
+  - component: {fileID: 1171926247}
   m_Layer: 0
   m_Name: Wave10
   m_TagString: Untagged
@@ -3163,6 +3489,94 @@ Transform:
   m_Father: {fileID: 702391552}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1171926247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1171926245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d8c6325896a74e43837a65cedf42ada, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 1196303534189875630, guid: 21391a28eb457ed459169065b2254520, type: 3}
+  randomSpawnInterval: {x: 1, y: 5}
+  randomYInterval: {x: -5, y: 5}
+  maxObjects: 4
+  moveSpeed: 12
+  size: {x: 1, y: 2}
+  startSpeed: 8
+  targetZ: 1
+  floatingIntensityX: {x: -2, y: 2}
+  floatingIntensityY: {x: -1, y: 1}
+--- !u!114 &1171926248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1171926245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d8c6325896a74e43837a65cedf42ada, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 3005760851026511587, guid: efcab936391126d4686c280f038b2164, type: 3}
+  randomSpawnInterval: {x: 1, y: 5}
+  randomYInterval: {x: -2, y: 2}
+  maxObjects: 2
+  moveSpeed: 3
+  size: {x: 1, y: 3}
+  startSpeed: 5
+  targetZ: 1
+  floatingIntensityX: {x: -1, y: 1}
+  floatingIntensityY: {x: -2, y: 2}
+--- !u!114 &1171926249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1171926245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d8c6325896a74e43837a65cedf42ada, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 3005760851026511587, guid: 1576661ab4c70904fb21fb0fb6f938e5, type: 3}
+  randomSpawnInterval: {x: 1, y: 10}
+  randomYInterval: {x: -3, y: 3}
+  maxObjects: 2
+  moveSpeed: 1
+  size: {x: 1, y: 3}
+  startSpeed: 5
+  targetZ: 1
+  floatingIntensityX: {x: -1, y: 1}
+  floatingIntensityY: {x: -1, y: 1}
+--- !u!114 &1171926250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1171926245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d8c6325896a74e43837a65cedf42ada, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 1196303534189875630, guid: ffd1e697d533b6842be5ae702f3ee168, type: 3}
+  randomSpawnInterval: {x: 1, y: 10}
+  randomYInterval: {x: -3, y: 5}
+  maxObjects: 3
+  moveSpeed: 6
+  size: {x: 1, y: 2}
+  startSpeed: 8
+  targetZ: 1
+  floatingIntensityX: {x: -3, y: 3}
+  floatingIntensityY: {x: -3, y: 3}
 --- !u!1 &1192736289
 GameObject:
   m_ObjectHideFlags: 0
@@ -3934,6 +4348,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1458504614}
+  - component: {fileID: 1458504617}
+  - component: {fileID: 1458504616}
+  - component: {fileID: 1458504615}
   m_Layer: 0
   m_Name: Wave6
   m_TagString: Untagged
@@ -3956,6 +4373,72 @@ Transform:
   m_Father: {fileID: 702391552}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1458504615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1458504613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d8c6325896a74e43837a65cedf42ada, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 3005760851026511587, guid: efcab936391126d4686c280f038b2164, type: 3}
+  randomSpawnInterval: {x: 5, y: 10}
+  randomYInterval: {x: -2, y: 2}
+  maxObjects: 6
+  moveSpeed: 3
+  size: {x: 1, y: 3}
+  startSpeed: 5
+  targetZ: 1
+  floatingIntensityX: {x: -1, y: 1}
+  floatingIntensityY: {x: -2, y: 2}
+--- !u!114 &1458504616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1458504613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d8c6325896a74e43837a65cedf42ada, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 3005760851026511587, guid: 1576661ab4c70904fb21fb0fb6f938e5, type: 3}
+  randomSpawnInterval: {x: 10, y: 20}
+  randomYInterval: {x: -3, y: 3}
+  maxObjects: 1
+  moveSpeed: 1
+  size: {x: 1, y: 3}
+  startSpeed: 5
+  targetZ: 1
+  floatingIntensityX: {x: -1, y: 1}
+  floatingIntensityY: {x: -1, y: 1}
+--- !u!114 &1458504617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1458504613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d8c6325896a74e43837a65cedf42ada, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 1196303534189875630, guid: ffd1e697d533b6842be5ae702f3ee168, type: 3}
+  randomSpawnInterval: {x: 2, y: 5}
+  randomYInterval: {x: -3, y: 5}
+  maxObjects: 3
+  moveSpeed: 6
+  size: {x: 1, y: 2}
+  startSpeed: 8
+  targetZ: 1
+  floatingIntensityX: {x: -3, y: 3}
+  floatingIntensityY: {x: -3, y: 3}
 --- !u!1 &1572002011
 GameObject:
   m_ObjectHideFlags: 0
@@ -3965,6 +4448,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1572002012}
+  - component: {fileID: 1572002013}
   m_Layer: 0
   m_Name: Wave3
   m_TagString: Untagged
@@ -3987,6 +4471,28 @@ Transform:
   m_Father: {fileID: 702391552}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1572002013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1572002011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d8c6325896a74e43837a65cedf42ada, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 1196303534189875630, guid: ffd1e697d533b6842be5ae702f3ee168, type: 3}
+  randomSpawnInterval: {x: 3, y: 8}
+  randomYInterval: {x: -3, y: 3}
+  maxObjects: 6
+  moveSpeed: 6
+  size: {x: 1, y: 1}
+  startSpeed: 8
+  targetZ: 1
+  floatingIntensityX: {x: -3, y: 3}
+  floatingIntensityY: {x: -3, y: 3}
 --- !u!1001 &1573096222
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4603,13 +5109,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 3005760851026511587, guid: efcab936391126d4686c280f038b2164, type: 3}
   randomSpawnInterval: {x: 5, y: 10}
-  randomYInterval: {x: -3, y: 3}
+  randomYInterval: {x: -1, y: 1}
   maxObjects: 5
   moveSpeed: 2
   size: {x: 1, y: 2}
   startSpeed: 5
   targetZ: 1
-  floatingIntensityX: {x: -2, y: 2}
+  floatingIntensityX: {x: 0, y: 0}
   floatingIntensityY: {x: 0, y: 0}
 --- !u!1 &1812892466
 GameObject:
@@ -4620,6 +5126,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1812892467}
+  - component: {fileID: 1812892470}
+  - component: {fileID: 1812892469}
   m_Layer: 0
   m_Name: Wave5
   m_TagString: Untagged
@@ -4642,6 +5150,50 @@ Transform:
   m_Father: {fileID: 702391552}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1812892469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1812892466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d8c6325896a74e43837a65cedf42ada, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 3005760851026511587, guid: efcab936391126d4686c280f038b2164, type: 3}
+  randomSpawnInterval: {x: 4, y: 8}
+  randomYInterval: {x: -3, y: 3}
+  maxObjects: 5
+  moveSpeed: 2
+  size: {x: 1, y: 1.5}
+  startSpeed: 5
+  targetZ: 1
+  floatingIntensityX: {x: -1, y: 1}
+  floatingIntensityY: {x: -1, y: 1}
+--- !u!114 &1812892470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1812892466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d8c6325896a74e43837a65cedf42ada, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 1196303534189875630, guid: 21391a28eb457ed459169065b2254520, type: 3}
+  randomSpawnInterval: {x: 10, y: 15}
+  randomYInterval: {x: -5, y: 5}
+  maxObjects: 2
+  moveSpeed: 12
+  size: {x: 1, y: 2}
+  startSpeed: 8
+  targetZ: 1
+  floatingIntensityX: {x: -1, y: 1}
+  floatingIntensityY: {x: -1, y: 1}
 --- !u!1 &1860005557
 GameObject:
   m_ObjectHideFlags: 0
@@ -5310,13 +5862,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d8c6325896a74e43837a65cedf42ada, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 1196303534189875630, guid: 7b441b245baa8c040a066c47dc16fdb4, type: 3}
+  prefab: {fileID: 1196303534189875630, guid: ffd1e697d533b6842be5ae702f3ee168, type: 3}
   randomSpawnInterval: {x: 3, y: 8}
-  randomYInterval: {x: -3, y: 3}
-  maxObjects: 5
+  randomYInterval: {x: -2, y: 2}
+  maxObjects: 4
   moveSpeed: 4
   size: {x: 1, y: 1}
-  startSpeed: 5
+  startSpeed: 8
   targetZ: 1
   floatingIntensityX: {x: -2, y: 2}
   floatingIntensityY: {x: -2, y: 2}
@@ -5656,6 +6208,11 @@ MonoBehaviour:
   - {fileID: 6719601240092127392, guid: b3798763f9e32cc44a17100d1b962f62, type: 3}
   - {fileID: 4956879745028560164, guid: f67d41bc29254674aac37d1e0d72e008, type: 3}
   - {fileID: 3604304018039248367, guid: 9ab859da9dcfaeb4fa7b9893f98e8070, type: 3}
+  DeadEnemyMidUfo:
+  - {fileID: 142380355161389157, guid: c0aadf27718d11145a8a8425e2859c22, type: 3}
+  - {fileID: 2944043762772354081, guid: 92f4fc80ec746c04e9f1176e6699df92, type: 3}
+  - {fileID: 4589185368384279820, guid: 35fd34c20fc78f9459840c38b7d5f9ad, type: 3}
+  - {fileID: 6574797571507868381, guid: d605a858f0a331041b4dd95c86ff18e3, type: 3}
   DeadEnemyAsteroid:
   - {fileID: 3005760851026511587, guid: 837ed9e8bc5a8124f8ef5760a7dc9d47, type: 3}
   DeadEnemyShield:
