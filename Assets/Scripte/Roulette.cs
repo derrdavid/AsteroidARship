@@ -48,8 +48,9 @@ public class Roulette : MonoBehaviour
 
     public void Rotate()
     {
-        if(inRotate == 0)
+        if (inRotate == 0)
         {
+            rotatePower = rotatePower + Random.Range(-500, 500);
             rigidbody.AddTorque(rotatePower);
             inRotate = 1;
         }
@@ -61,7 +62,7 @@ public class Roulette : MonoBehaviour
 
         if (rotation > 0 && rotation <= 45)
         {
-            GetComponent<RectTransform>().eulerAngles = new Vector3(0, 0, 45-22);
+            GetComponent<RectTransform>().eulerAngles = new Vector3(0, 0, 45 - 22);
             Win(1);
         }
         else if (rotation > 45 && rotation <= 90)
@@ -103,9 +104,7 @@ public class Roulette : MonoBehaviour
 
     public void Win(int powerUp)
     {
-        Debug.Log(powerUp);
         shootingscript.setPowerUp(powerUp);
         textboxscript.setPowerup(powerUp);
-        container.SetActive(false);
     }
 }

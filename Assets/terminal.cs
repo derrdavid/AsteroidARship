@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class terminal : MonoBehaviour
 {
-    public GameObject glücksrad;
+    [SerializeField] private Roulette rouletteScript;
     [SerializeField] private WaveManager waveManager;
     public bool wasTriggerd = false;
 
@@ -14,7 +14,7 @@ public class terminal : MonoBehaviour
         {
             if (waveManager.getWave() != 0)
             {
-                glücksrad.SetActive(true);
+                rouletteScript.Rotate();
                 wasTriggerd = true;
             }
         }

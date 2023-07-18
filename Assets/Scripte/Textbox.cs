@@ -19,20 +19,20 @@ public class Textbox : MonoBehaviour
     private void Update()
     {
 
-        if (lerpTime < 1) 
+        if (lerpTime < 1)
         {
             gameObject.GetComponent<RectTransform>().localScale = Vector3.Lerp(start_size, final_size, lerpTime);
             lerpTime += Time.deltaTime;
             resetText();
-} 
-        if (lerpTime > 1)  { setText(); }
+        }
+        if (lerpTime > 1) { setText(); }
 
 
 
-        if (Input.touchCount > 0)
+        if (Input.touchCount > 0 || Input.GetMouseButtonDown(0))
         {
             card.SetActive(false);
-        } 
+        }
     }
     // Start is called before the first frame update
     void OnEnable()
@@ -69,20 +69,20 @@ public class Textbox : MonoBehaviour
 
                 break;
             case 1:
-                powerup.text = "doppelte <br> xp";
-                description.text = "Ihr erhaltet für jeden Kill die doppelten Punkte!";
-
+                powerup.text = "DOPPELTE <BR> XP";
+                description.text = "IHR ERHALTET FUR JEDEN KILL DIE DOPPELTEN PUNKTE!";
                 break;
+
             case 2:
-                powerup.text = "rapidfire";
-                description.text = "Schnelleres Schießen. weniger nachdenken mehr Ballern!";
-
+                powerup.text = "RAPIDFIRE";
+                description.text = "SCHNELLERES SCHIEÃŸEN. WENIGER NACHDENKEN MEHR BALLERN!";
                 break;
+
             case 3:
-                powerup.text = "multishot";
-                description.text = "Du schießt zwei schüsse gleichzeitig. Doppelter schaden, doppelter spaß!";
-
+                powerup.text = "MULTISHOT";
+                description.text = "DU SCHIEÃŸT ZWEI SCHUSSE GLEICHZEITIG. DOPPELTER SCHADEN, DOPPELTER SPAÃŸ!";
                 break;
+
         }
     }
 }

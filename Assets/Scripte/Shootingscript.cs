@@ -45,8 +45,11 @@ public class Shootingscript : MonoBehaviour
     private Vector3 shotTarget;
     private bool secondShot = false;
     private Vector3 currentFirePoint;
+    private Vector3 currentFirePoint2;
     private LineRenderer lineRenderer;
+    private LineRenderer lineRenderer2;
     private GameObject spawnedLaser;
+    private GameObject spawnedLaser2;
     private bool shotTriggered;
 
     // PowerUps
@@ -62,6 +65,10 @@ public class Shootingscript : MonoBehaviour
         spawnedLaser = Instantiate(laserPrefap) as GameObject;
         lineRenderer = spawnedLaser.transform.GetChild(0).gameObject.GetComponent<LineRenderer>();
         spawnedLaser.transform.position = new Vector3(0, 0, 0);
+
+        spawnedLaser2 = Instantiate(laserPrefap) as GameObject;
+        lineRenderer2 = spawnedLaser2.transform.GetChild(0).gameObject.GetComponent<LineRenderer>();
+        spawnedLaser2.transform.position = new Vector3(0, 0, 0);
         disableLaser();
     }
     void Update()
@@ -70,18 +77,33 @@ public class Shootingscript : MonoBehaviour
         // �berpr�fen, ob der Bildschirm ber�hrt wurde
         if (shotTriggered && !shotFired)
         {
-            Raycast();
-            if (multishot) { Raycast(); }
+            if (multishot)
+            {
+                Raycast();
+                Raycast();
+            }
+            else
+            {
+                Raycast();
+            }
         }
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began && !shotFired)
         {
-            Raycast();
+            if (multishot)
+            {
+                Raycast();
+                Raycast();
+            }
+            else
+            {
+                Raycast();
+            }
         }
         if (shotFired)
         {
             timeSinceLastShot += Time.deltaTime;
 
-            if (rapidfire) { downtime = .2f; } 
+            if (rapidfire) { downtime = .2f; }
             if (timeSinceLastShot > downtime)
             {
                 timeSinceLastShot = 0;
@@ -100,11 +122,13 @@ public class Shootingscript : MonoBehaviour
         {
             secondShot = !secondShot;
             currentFirePoint = firePoint2.transform.position;
+            currentFirePoint2 = firePoint.transform.position;
         }
         else
         {
             secondShot = !secondShot;
             currentFirePoint = firePoint.transform.position;
+            currentFirePoint2 = firePoint2.transform.position;
         }
         // ueberpruefen Sie, ob ein Treffer vorhanden ist
         if (Physics.Raycast(mainCamera.transform.position, mainCamera.transform.forward, out RaycastHit hit, 100, enemys, QueryTriggerInteraction.UseGlobal))
@@ -155,10 +179,18 @@ public class Shootingscript : MonoBehaviour
         pos[0] = currentFirePoint;
         pos[1] = shotTarget;
         lineRenderer.SetPositions(pos);
+        if (multishot)
+        {
+            spawnedLaser2.SetActive(true);
+            pos[0] = currentFirePoint2;
+            pos[1] = shotTarget;
+            lineRenderer2.SetPositions(pos);
+        }
     }
     void disableLaser()
     {
         spawnedLaser.SetActive(false);
+        spawnedLaser2.SetActive(false);
     }
 
     public void setPowerUp(int powerUpId)
