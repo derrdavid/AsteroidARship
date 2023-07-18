@@ -49,6 +49,12 @@ public class Shootingscript : MonoBehaviour
     private GameObject spawnedLaser;
     private bool shotTriggered;
 
+    // PowerUps
+    [Header("powerups")]
+    public bool doubleXP = false;
+    public bool multishot = false;
+    public bool rapidfire = false;
+
     // Update is called once per frame
     private void Start()
     {
@@ -65,6 +71,7 @@ public class Shootingscript : MonoBehaviour
         if (shotTriggered && !shotFired)
         {
             Raycast();
+            if (multishot) { Raycast(); }
         }
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began && !shotFired)
         {
@@ -73,6 +80,8 @@ public class Shootingscript : MonoBehaviour
         if (shotFired)
         {
             timeSinceLastShot += Time.deltaTime;
+
+            if (rapidfire) { downtime = .2f; } 
             if (timeSinceLastShot > downtime)
             {
                 timeSinceLastShot = 0;
@@ -112,6 +121,7 @@ public class Shootingscript : MonoBehaviour
                     {
                         GameObject.Find("Managers").GetComponent<SoundManager>().oneShotKillSound();
                         kills++;
+                        if (doubleXP) { kills++; }
                     }
                     hit.collider.GetComponent<Projectile>().getHit(hit.point, damage);
                 }
@@ -150,6 +160,31 @@ public class Shootingscript : MonoBehaviour
     {
         spawnedLaser.SetActive(false);
     }
+
+    public void setPowerUp(int powerUpId)
+    {
+        switch (powerUpId)
+        {
+            case 1:
+                doubleXP = true;
+                break;
+            case 2:
+                rapidfire = true;
+                break;
+            case 3:
+                multishot = true;
+                break;
+        }
+    }
+
+    public void resetPowerUps()
+    {
+        doubleXP = false;
+        rapidfire = false;
+        multishot = false;
+    }
+
+
     public int getKills()
     {
         return kills;

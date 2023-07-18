@@ -40,6 +40,7 @@ public class WaveManager : MonoBehaviour
     private float remainingTime;
     private bool paused;
     [SerializeField] private Shootingscript shootingscript;
+    [SerializeField] private terminal terminalscript;
     [SerializeField] private Wave[] waves;
 
 
@@ -61,6 +62,8 @@ public class WaveManager : MonoBehaviour
                 && !waves[actualWave - 1].increased
                 && waves.Length > actualWave
                 && remainingTime == 0:
+                    shootingscript.resetPowerUps();
+                    terminalscript.wasTriggerd = false;
                     StartCoroutine(increaseWave());
                     break;
 
@@ -77,6 +80,7 @@ public class WaveManager : MonoBehaviour
     }
     private IEnumerator increaseWave()
     {
+
         if (actualWave > 0)
         {
             waves[actualWave - 1].activate(false);
